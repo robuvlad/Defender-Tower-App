@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyWaypoints : MonoBehaviour
 {
-    [SerializeField] List<Transform> waypoints;
-    [SerializeField] GameObject enemy;
+    [SerializeField] List<Transform> waypoints = null;
+    [SerializeField] GameObject enemy = null;
 
     private Transform currentPoint = null;
     private EnemySnail enemyBlackWheel = null;
