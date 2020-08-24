@@ -41,4 +41,9 @@ public class EnemyWaypoints : MonoBehaviour
             }
         }
     }
+
+    public List<GameObject> GetEnemies()
+    {
+        return enemies;
+    }
 }

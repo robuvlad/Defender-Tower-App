@@ -39,20 +39,42 @@ public class AttackingEnemies : MonoBehaviour, IAlly
         Collider2D[] colliders = Physics2D.OverlapCircleAll(this.transform.position, radius);
         try
         {
-            Vector3 targ = colliders[0].transform.position;
-            targ.z = 0f;
-
-            Vector3 objectPos = transform.position;
-            targ.x = targ.x - objectPos.x;
-            targ.y = targ.y - objectPos.y;
-
-            float angle = Mathf.Atan2(targ.y, targ.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+            EnemyWaypoints enemy = GameObject.Find("Waypoints").GetComponent<EnemyWaypoints>();
+            List<GameObject> enemies = enemy.GetEnemies();
+            for(int i=0; i< enemies.Capacity; i++)
+            {
+                bool isInRange = false;
+                for(int j=0; j<colliders.Length; j++)
+                {
+                    if (colliders[j].gameObject == enemies[i])
+                    {
+                        Collider2D enemyCollider = enemies[i].GetComponent<Collider2D>() as Collider2D;
+                        RotateTowards(enemyCollider);
+                        isInRange = true;
+                        break;
+                    }
+                }
+                if (isInRange)
+                    break;
+            }
         }
         catch(IndexOutOfRangeException e)
         {
 
         }
+    }
+
+    private void RotateTowards(Collider2D targetCollider)
+    {
+        Vector3 targ = targetCollider.transform.position;
+        targ.z = 0f;
+
+        Vector3 objectPos = transform.position;
+        targ.x = targ.x - objectPos.x;
+        targ.y = targ.y - objectPos.y;
+
+        float angle = Mathf.Atan2(targ.y, targ.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
     }
 
     private void InitializeLindeRenderer()

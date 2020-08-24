@@ -17,9 +17,4 @@ public class EnemySnail : MonoBehaviour, IEnemy
         get => enemySpeed;
         set => enemySpeed = value;
     }
-
-    void Start()
-    {
-        
-    }
 }
