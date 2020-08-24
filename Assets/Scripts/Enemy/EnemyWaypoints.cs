@@ -1,19 +1,18 @@
-﻿using System.Collections;
+﻿using Assets.Scripts;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyWaypoints : MonoBehaviour
 {
     [SerializeField] List<Transform> waypoints = null;
-    [SerializeField] GameObject enemy = null;
+    [SerializeField] List<GameObject> enemies = null;
 
     private Transform currentPoint = null;
-    private EnemySnail enemyBlackWheel = null;
 
     void Start()
     {
         currentPoint = waypoints[0];
-        enemyBlackWheel = enemy.GetComponent<EnemySnail>() as EnemySnail;
     }
 
     void Update()
@@ -24,8 +23,12 @@ public class EnemyWaypoints : MonoBehaviour
 
     private void MoveTowardsNextPoint()
     {
-        float distanceDelta = Time.deltaTime * enemyBlackWheel.Speed;
-        enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, currentPoint.position, distanceDelta);
+        for(int i=0; i<enemies.Count; i++)
+        {
+            var enemyComponent = enemies[i].GetComponent<IEnemy>() as IEnemy;
+            float distanceDelta = Time.deltaTime * enemyComponent.Speed;
+            enemies[i].transform.position = Vector3.MoveTowards(enemies[i].transform.position, currentPoint.position, distanceDelta);
+        }
     }
 
     private void UpdateCurrentPoint()

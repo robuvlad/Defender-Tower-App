@@ -11,9 +11,11 @@ public class AttackingEnemies : MonoBehaviour, IAlly
     [Range(0, 50)]
     private int segments = 150;
     private LineRenderer line = null;
+    private Collider2D firstCollider = null;
 
     private const float line_width = 0.03f;
     private const float max_degrees = 360.0f;
+    private const float speed = 3.0f;
 
     public float Range
     {
@@ -37,13 +39,15 @@ public class AttackingEnemies : MonoBehaviour, IAlly
         Collider2D[] colliders = Physics2D.OverlapCircleAll(this.transform.position, radius);
         try
         {
-            Vector3 diff = Camera.main.ScreenToWorldPoint(colliders[0].transform.position) - transform.position;
-            diff.Normalize();
-            Debug.Log(colliders[0].transform.position);
-            Debug.Log(colliders.Length);
+            Vector3 targ = colliders[0].transform.position;
+            targ.z = 0f;
 
-            float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
+            Vector3 objectPos = transform.position;
+            targ.x = targ.x - objectPos.x;
+            targ.y = targ.y - objectPos.y;
+
+            float angle = Mathf.Atan2(targ.y, targ.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
         }
         catch(IndexOutOfRangeException e)
         {
