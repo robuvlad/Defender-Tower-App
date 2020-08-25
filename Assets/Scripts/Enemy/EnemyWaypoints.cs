@@ -8,36 +8,55 @@ public class EnemyWaypoints : MonoBehaviour
     [SerializeField] List<Transform> waypoints = null;
     [SerializeField] List<GameObject> enemies = null;
 
-    private Transform currentPoint = null;
+    private Transform[] currentPoints = null;
+    private int[] indexPoints = null;
 
     void Start()
     {
-        currentPoint = waypoints[0];
+        InitializePoints();
     }
 
     void Update()
     {
-        MoveTowardsNextPoint();
-        UpdateCurrentPoint();
+        MoveTowardsNextPoints();
+        UpdateCurrentPoints();
     }
 
-    private void MoveTowardsNextPoint()
+    private void InitializePoints()
     {
-        for(int i=0; i<enemies.Count; i++)
+        currentPoints = new Transform[enemies.Count];
+        indexPoints = new int[enemies.Count];
+        for (int i = 0; i < enemies.Count; i++)
         {
-            var enemyComponent = enemies[i].GetComponent<IEnemy>() as IEnemy;
-            float distanceDelta = Time.deltaTime * enemyComponent.Speed;
-            enemies[i].transform.position = Vector3.MoveTowards(enemies[i].transform.position, currentPoint.position, distanceDelta);
+            indexPoints[i] = 0;
+            currentPoints[i] = waypoints[indexPoints[i]];
         }
     }
 
-    private void UpdateCurrentPoint()
+    private void MoveTowardsNextPoints()
     {
-        for(int i=0; i<waypoints.Capacity - 1; i++)
+        for(int i=0; i<enemies.Count; i++)
         {
-            if (waypoints[i] == currentPoint)
+            if (enemies[i] != null)
             {
-                currentPoint = waypoints[i + 1];
+                var enemyComponent = enemies[i].GetComponent<IEnemy>() as IEnemy;
+                float distanceDelta = Time.deltaTime * enemyComponent.Speed;
+                enemies[i].transform.position = Vector3.MoveTowards(enemies[i].transform.position, currentPoints[i].position, distanceDelta);
+            }
+        }
+    }
+
+    private void UpdateCurrentPoints()
+    {
+        for(int i=0; i<currentPoints.Length; i++)
+        {
+            if (enemies[i] != null && enemies[i].transform.position == currentPoints[i].position) //enemy can be destroyed => null
+            {
+                if (indexPoints[i] + 1 < waypoints.Count)
+                {
+                    currentPoints[i] = waypoints[indexPoints[i] + 1];
+                    indexPoints[i] += 1;
+                }
             }
         }
     }

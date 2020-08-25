@@ -8,7 +8,6 @@ public class AttackingEnemies : MonoBehaviour, IAlly
 {
     [Header("Setup configuration")]
     [SerializeField] float radius = 0.0f;
-    [SerializeField] float projectileSpeed = 0.0f;
 
     [SerializeField] GameObject weapon = null;
     [SerializeField] GameObject spawnProjectile = null;
@@ -46,7 +45,7 @@ public class AttackingEnemies : MonoBehaviour, IAlly
         {
             EnemyWaypoints enemy = GameObject.Find("Waypoints").GetComponent<EnemyWaypoints>();
             List<GameObject> enemies = enemy.GetEnemies();
-            for(int i=0; i< enemies.Capacity; i++)
+            for(int i=0; i< enemies.Count; i++)
             {
                 bool isInRange = false;
                 for(int j=0; j<colliders.Length; j++)
@@ -89,6 +88,7 @@ public class AttackingEnemies : MonoBehaviour, IAlly
         if (localTime <= 0.0f)
         {
             GameObject projectile = Instantiate(weapon, spawnProjectile.transform.position, Quaternion.identity);
+            float projectileSpeed = projectile.GetComponent<ProjectileConfig>().Speed;
             RotateTowards(enemy.GetComponent<Collider2D>(), projectile);
             projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(enemy.transform.position.x * projectileSpeed, 
                 enemy.transform.position.y * projectileSpeed);
