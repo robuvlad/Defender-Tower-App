@@ -21,6 +21,9 @@ public class AttackingEnemies : MonoBehaviour, IAlly
     private const float LINE_WIDTH = 0.03f;
     private const float MAX_DEGREES = 360.0f;
 
+    private const float MAP_MAX = 10.0f;
+    private const float MAP_MIN = -10.0f;
+
     public float Range
     {
         get => radius;
@@ -87,14 +90,31 @@ public class AttackingEnemies : MonoBehaviour, IAlly
         localTime -= Time.deltaTime;
         if (localTime <= 0.0f)
         {
-            GameObject projectile = Instantiate(weapon, spawnProjectile.transform.position, Quaternion.identity);
+            GameObject projectile = Instantiate(weapon, spawnProjectile.transform.position, this.gameObject.transform.rotation);
             float projectileSpeed = projectile.GetComponent<ProjectileConfig>().Speed;
-            RotateTowards(enemy.GetComponent<Collider2D>(), projectile);
-            projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(enemy.transform.position.x * projectileSpeed, 
-                enemy.transform.position.y * projectileSpeed);
-
+            float x_velocity = enemy.transform.position.x * projectileSpeed * Time.deltaTime;
+            float y_velocity = enemy.transform.position.y * projectileSpeed * Time.deltaTime;
+            Vector2 relativePoint = EstimateRelativePoint(x_velocity, y_velocity);
+            Debug.Log(x_velocity + "  " + y_velocity + " | " + relativePoint.x + " " + relativePoint.y);
+            projectile.GetComponent<Rigidbody2D>().velocity = relativePoint;
+            //projectile.GetComponent<Rigidbody2D>().AddForce(relativePoint, ForceMode2D.Force);
             localTime = timer;
         }
+    }
+
+    private Vector2 EstimateRelativePoint(float x, float y)
+    {
+        if ((x >= 0 && y >= 0 && x <= y) || (x <= 0 && y >= 0 && -x <= y)) {
+            return new Vector2(MAP_MAX / (y / x), MAP_MAX);
+        }
+        else if ((x <= 0 && y >= 0 && -x >= y) || (x <= 0 && y <= 0 && x <= y)) {
+            return new Vector2(MAP_MIN, MAP_MIN * (y / x));
+        }
+        else if ((x <= 0 && y <= 0 && x >= y) || (x >= 0 && y <= 0 && x <= -y)) {
+            return new Vector2(MAP_MIN / (y / x), MAP_MIN);
+        }
+        else
+            return new Vector2(MAP_MAX, MAP_MAX * (y / x));
     }
 
     private void InitializeLineRenderer()

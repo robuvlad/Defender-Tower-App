@@ -29,7 +29,7 @@ public class EnemySnail : MonoBehaviour, IEnemy
             {
                 Destroy(this.gameObject);
             }
-            //Destroy(other.gameObject);
+            Destroy(other.gameObject);
         }
     }
 }
