@@ -1,10 +1,11 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Ally;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PositionDefenders : MonoBehaviour
 {
-    [SerializeField] GameObject defender = null;
+    private GameObject defender = null;
 
     private Vector3 SPAWNING_POINT = new Vector3(0, 0, -1);
 
@@ -15,6 +16,15 @@ public class PositionDefenders : MonoBehaviour
 
     private void SpawnDefender()
     {
-        GameObject newDefender = Instantiate(defender, transform.position + SPAWNING_POINT, Quaternion.identity) as GameObject;
+        if (defender != null)
+        {
+            GameObject newDefender = Instantiate(defender, transform.position + SPAWNING_POINT, Quaternion.identity) as GameObject;
+            Destroy(GetComponent<BoxCollider2D>());
+        }
+    }
+
+    public void SetDefender(GameObject def)
+    {
+        this.defender = def;
     }
 }
