@@ -877,7 +877,7 @@ GameObject:
   - component: {fileID: 594752081}
   - component: {fileID: 594752083}
   m_Layer: 0
-  m_Name: tank1
+  m_Name: defender 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -984,6 +984,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc256c68e5836904b9b1e61b35b4930b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defender: {fileID: 1874449557121424188, guid: abe5e69c9dda18346829ecedcff5230a,
+    type: 3}
 --- !u!1 &653728560
 GameObject:
   m_ObjectHideFlags: 0
@@ -1028,8 +1030,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30c2b89a0a1fde0498496d0da4e46969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defender: {fileID: 1874449557121424188, guid: abe5e69c9dda18346829ecedcff5230a,
-    type: 3}
 --- !u!61 &653728563
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1256,8 +1256,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30c2b89a0a1fde0498496d0da4e46969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defender: {fileID: 1874449557121424188, guid: abe5e69c9dda18346829ecedcff5230a,
-    type: 3}
 --- !u!61 &1019932271
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1328,8 +1326,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30c2b89a0a1fde0498496d0da4e46969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defender: {fileID: 1874449557121424188, guid: abe5e69c9dda18346829ecedcff5230a,
-    type: 3}
 --- !u!61 &1130982531
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2945,7 +2941,7 @@ GameObject:
   - component: {fileID: 1627471890}
   - component: {fileID: 1627471892}
   m_Layer: 0
-  m_Name: tank1 (1)
+  m_Name: defender 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2959,8 +2955,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1627471888}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.174, y: -5.49, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_LocalPosition: {x: -5.428, y: -5.513, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 847977905}
   m_RootOrder: 2
@@ -2978,7 +2974,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.04639229, y: -0.012847185}
+  m_Offset: {x: 0.015566826, y: -0.007757187}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2989,7 +2985,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9938147, y: 1.2942419}
+  m_Size: {x: 2.117733, y: 1.8620777}
   m_EdgeRadius: 0
 --- !u!212 &1627471891
 SpriteRenderer:
@@ -3029,7 +3025,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 15
-  m_Sprite: {fileID: 21300000, guid: 468c5b4cf786ea74f83d688664d59f49, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 97a4a9a3a7f2cb843a047f82bb0bcab1, type: 3}
   m_Color: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3052,6 +3048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc256c68e5836904b9b1e61b35b4930b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defender: {fileID: 621932770525548017, guid: d8dbf2007b4cf824cbaeed9c08a2beaf, type: 3}
 --- !u!1 &1768844483
 GameObject:
   m_ObjectHideFlags: 0
@@ -6382,8 +6379,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30c2b89a0a1fde0498496d0da4e46969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defender: {fileID: 1874449557121424188, guid: abe5e69c9dda18346829ecedcff5230a,
-    type: 3}
 --- !u!61 &2081864736
 BoxCollider2D:
   m_ObjectHideFlags: 0
