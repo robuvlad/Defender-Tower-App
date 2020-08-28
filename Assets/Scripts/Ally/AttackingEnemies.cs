@@ -30,12 +30,6 @@ public class AttackingEnemies : MonoBehaviour, IAlly
         set => radius= value;
     }
 
-    void Start()
-    {
-        InitializeLineRenderer();
-        CreateLineRenderer();
-    }
-
     void Update()
     {
         CheckForEnemies();
@@ -98,6 +92,19 @@ public class AttackingEnemies : MonoBehaviour, IAlly
         }
     }
 
+    private void OnMouseDown()
+    {
+        if (line == null)
+        {
+            InitializeLineRenderer();
+            CreateLineRenderer();
+        }
+        else
+        {
+            DestroyLineRenderer();
+        }
+    }
+
     private void InitializeLineRenderer()
     {
         line = GetComponent<LineRenderer>();
@@ -110,6 +117,7 @@ public class AttackingEnemies : MonoBehaviour, IAlly
     {
         float x, y;
         float angle = 20f;
+        line.positionCount = segments + 1;
         for (int i = 0; i < (segments + 1); i++)
         {
             x = Mathf.Sin(Mathf.Deg2Rad * angle) * radius;
@@ -119,5 +127,11 @@ public class AttackingEnemies : MonoBehaviour, IAlly
 
             angle += (MAX_DEGREES / segments);
         }
+    }
+
+    private void DestroyLineRenderer()
+    {
+        line.positionCount = 1;
+        line = null;
     }
 }
