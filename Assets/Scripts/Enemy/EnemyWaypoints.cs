@@ -39,8 +39,8 @@ public class EnemyWaypoints : MonoBehaviour
         {
             if (enemies[i] != null)
             {
-                var enemyComponent = enemies[i].GetComponent<IEnemy>() as IEnemy;
-                float distanceDelta = Time.deltaTime * enemyComponent.Speed;
+                var enemyComponent = enemies[i].GetComponent<Enemy>() as Enemy;
+                float distanceDelta = Time.deltaTime * enemyComponent.GetSpeed();
                 enemies[i].transform.position = Vector3.MoveTowards(enemies[i].transform.position, currentPoints[i].position, distanceDelta);
             }
         }
