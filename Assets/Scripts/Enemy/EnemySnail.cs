@@ -9,6 +9,8 @@ public class EnemySnail : MonoBehaviour, IEnemy
     [SerializeField] float enemySpeed = 0.0f;
 
     private const string TAG_PROJECTILE = "projectile";
+    private const string IS_DYING_ANIMATOR_PARAM = "isDying";
+    private const float TIME_TO_DIE = 2.0f;
 
     public float Health {
         get => enemyHealth;
@@ -27,7 +29,9 @@ public class EnemySnail : MonoBehaviour, IEnemy
             Health -= other.GetComponent<ProjectileConfig>().Damage;
             if (Health <= 0.0f)
             {
-                Destroy(this.gameObject);
+                var animator = GetComponent<Animator>();
+                animator.SetBool(IS_DYING_ANIMATOR_PARAM, true);
+                Destroy(this.gameObject, TIME_TO_DIE);
             }
             Destroy(other.gameObject);
         }
