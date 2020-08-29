@@ -37,7 +37,7 @@ public class EnemyWaypoints : MonoBehaviour
     {
         for(int i=0; i<enemies.Count; i++)
         {
-            if (enemies[i] != null)
+            if (enemies[i] != null && enemies[i].GetHealth() > 0.0f)
             {
                 var enemyComponent = enemies[i].GetComponent<Enemy>() as Enemy;
                 float distanceDelta = Time.deltaTime * enemyComponent.GetSpeed();
