@@ -31,11 +31,10 @@ public class HealthBar : MonoBehaviour
 
     private void ShowHealthBar(float health)
     {
-        if (health >= 0.0f)
-        {
-            float normalizedHealth = NormalizedHealth(health);
-            bar.transform.localScale = new Vector2(normalizedHealth, 1.0f);
-        }
+        if (health < 0.0f)
+            health = 0.0f;
+        float normalizedHealth = NormalizedHealth(health);
+        bar.transform.localScale = new Vector2(normalizedHealth, 1.0f);
     }
 
     private float NormalizedHealth(float actualHealth)
@@ -45,6 +44,8 @@ public class HealthBar : MonoBehaviour
 
     private void ChangeColorBasedOnHealth(float health)
     {
+        if (health < 0.0f)
+            health = 0.0f;
         NormalizedColor(health);
         var sprite = barSprite.GetComponent<SpriteRenderer>() as SpriteRenderer;
         sprite.color = new Color32(red, green, blue, 255);

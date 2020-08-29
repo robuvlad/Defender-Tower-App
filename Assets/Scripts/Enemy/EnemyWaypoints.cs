@@ -6,13 +6,18 @@ using UnityEngine;
 public class EnemyWaypoints : MonoBehaviour
 {
     [SerializeField] List<Transform> waypoints = null;
-    [SerializeField] List<Enemy> enemies = null;
+    [SerializeField] Enemy enemy = null;
+    [SerializeField] int numberOfEnemies = 0;
+    [SerializeField] float timeBetweenEnemies = 0.0f;
 
+    private List<Enemy> enemies = null;
     private Transform[] currentPoints = null;
     private int[] indexPoints = null;
 
     void Start()
     {
+        enemies = new List<Enemy>();
+        StartCoroutine(InstantiateRandomEnemies());
         InitializePoints();
     }
 
@@ -22,11 +27,22 @@ public class EnemyWaypoints : MonoBehaviour
         UpdateCurrentPoints();
     }
 
+    private IEnumerator InstantiateRandomEnemies()
+    {
+        while (numberOfEnemies > 1)
+        {
+            var newEnemy = Instantiate(enemy, waypoints[0].transform.position, Quaternion.identity);
+            enemies.Add(newEnemy);
+            numberOfEnemies -= 1;
+            yield return new WaitForSeconds(timeBetweenEnemies);
+        }
+    }
+
     private void InitializePoints()
     {
-        currentPoints = new Transform[enemies.Count];
-        indexPoints = new int[enemies.Count];
-        for (int i = 0; i < enemies.Count; i++)
+        currentPoints = new Transform[numberOfEnemies];
+        indexPoints = new int[numberOfEnemies];
+        for (int i = 0; i < numberOfEnemies; i++)
         {
             indexPoints[i] = 0;
             currentPoints[i] = waypoints[indexPoints[i]];
@@ -48,7 +64,7 @@ public class EnemyWaypoints : MonoBehaviour
 
     private void UpdateCurrentPoints()
     {
-        for(int i=0; i<currentPoints.Length; i++)
+        for(int i=0; i<enemies.Count; i++)
         {
             if (enemies[i] != null && enemies[i].transform.position == currentPoints[i].position) //enemy can be destroyed => null
             {
