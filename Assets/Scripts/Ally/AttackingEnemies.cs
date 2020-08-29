@@ -49,11 +49,15 @@ public class AttackingEnemies : MonoBehaviour, IAlly
                 {
                     if (colliders[j].gameObject == enemies[i])
                     {
-                        Collider2D enemyCollider = enemies[i].GetComponent<Collider2D>() as Collider2D;
-                        RotateTowards(enemyCollider, this.gameObject);
-                        Shoot(enemies[i]);
-                        isInRange = true;
-                        break;
+                        Enemy en = enemies[i].GetComponent<Enemy>() as Enemy;
+                        if (en.GetHealth() >= 0.0f)
+                        {
+                            Collider2D enemyCollider = enemies[i].GetComponent<Collider2D>() as Collider2D;
+                            RotateTowards(enemyCollider, this.gameObject);
+                            Shoot(enemies[i]);
+                            isInRange = true;
+                            break;
+                        }
                     }
                 }
                 if (isInRange)

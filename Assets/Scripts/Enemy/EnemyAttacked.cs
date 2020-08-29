@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyAttacked : MonoBehaviour
 {
-    private float Health;
+    private Enemy enemy = null;
 
     private const string TAG_PROJECTILE = "projectile";
     private const string IS_DYING_ANIMATOR_PARAM = "isDying";
@@ -12,16 +12,16 @@ public class EnemyAttacked : MonoBehaviour
 
     void Start()
     {
-        Enemy enemy = gameObject.GetComponent<Enemy>() as Enemy;
-        Health = enemy.GetHealth();
+        enemy = gameObject.GetComponent<Enemy>() as Enemy;
     }
 
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == TAG_PROJECTILE)
         {
-            Health -= other.GetComponent<ProjectileConfig>().Damage;
-            if (Health <= 0.0f)
+            float newHealth = enemy.GetHealth() - other.GetComponent<ProjectileConfig>().Damage;
+            enemy.SetHealth(newHealth);
+            if (enemy.GetHealth() <= 0.0f)
             {
                 var animator = GetComponent<Animator>();
                 animator.SetBool(IS_DYING_ANIMATOR_PARAM, true);
