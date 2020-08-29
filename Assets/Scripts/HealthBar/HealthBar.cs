@@ -27,7 +27,6 @@ public class HealthBar : MonoBehaviour
         float health = enemy.GetHealth();
         ShowHealthBar(health);
         ChangeColorBasedOnHealth(health);
-        Debug.Log(enemy.GetHealth());
     }
 
     private void ShowHealthBar(float health)

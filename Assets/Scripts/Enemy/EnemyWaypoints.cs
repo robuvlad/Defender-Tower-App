@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyWaypoints : MonoBehaviour
 {
     [SerializeField] List<Transform> waypoints = null;
-    [SerializeField] List<GameObject> enemies = null;
+    [SerializeField] List<Enemy> enemies = null;
 
     private Transform[] currentPoints = null;
     private int[] indexPoints = null;
@@ -61,7 +61,7 @@ public class EnemyWaypoints : MonoBehaviour
         }
     }
 
-    public List<GameObject> GetEnemies()
+    public List<Enemy> GetEnemies()
     {
         return enemies;
     }
