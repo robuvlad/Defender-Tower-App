@@ -7,6 +7,8 @@ public class EnemyWaypoints : MonoBehaviour
 {
     [SerializeField] List<Transform> waypoints = null;
     [SerializeField] Enemy enemy = null;
+    //[SerializeField] List<Enemy> enemiesPrefabs = null;
+    //[SerializeField] List<float> probabilities = null;
     [SerializeField] int numberOfEnemies = 0;
     [SerializeField] float timeBetweenEnemies = 0.0f;
 
@@ -37,6 +39,15 @@ public class EnemyWaypoints : MonoBehaviour
             yield return new WaitForSeconds(timeBetweenEnemies);
         }
     }
+
+    /*
+    private void InstantiateRandomEnemy()
+    {
+        for(int i=0; i<enemiesPrefabs.Count; i++)
+        {
+
+        }
+    }*/
 
     private void InitializePoints()
     {

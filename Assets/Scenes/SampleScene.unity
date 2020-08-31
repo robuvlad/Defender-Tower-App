@@ -2889,9 +2889,9 @@ MonoBehaviour:
   - {fileID: 684467990}
   - {fileID: 1965267372}
   - {fileID: 464429208}
-  enemy: {fileID: 2323725811656276300, guid: 0af25634053586541a2b49875ee0b103, type: 3}
+  enemy: {fileID: 2235167841150405213, guid: 40398563d19c5a9438f65aa1905b562f, type: 3}
   numberOfEnemies: 15
-  timeBetweenEnemies: 1
+  timeBetweenEnemies: 2
 --- !u!4 &2007258651
 Transform:
   m_ObjectHideFlags: 0
