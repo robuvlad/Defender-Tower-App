@@ -21,7 +21,7 @@ public class AttackingEnemies : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapCircleAll(this.transform.position, radius);
         try
         {
-            EnemyWaypoints enemy = GameObject.Find("Waypoints").GetComponent<EnemyWaypoints>();
+            Wave enemy = GameObject.Find("Wave 1").GetComponent<Wave>();
             List<Enemy> enemies = enemy.GetEnemies();
             for(int i=0; i< enemies.Count; i++)
             {

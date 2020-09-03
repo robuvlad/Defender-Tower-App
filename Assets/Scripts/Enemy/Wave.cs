@@ -1,25 +1,24 @@
-﻿using Assets.Scripts;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyWaypoints : MonoBehaviour
+public class Wave : MonoBehaviour
 {
-    [SerializeField] List<Transform> waypoints = null;
+    [Header("Enemy configuration")]
     [SerializeField] Enemy enemy = null;
-    //[SerializeField] List<Enemy> enemiesPrefabs = null;
-    //[SerializeField] List<float> probabilities = null;
     [SerializeField] int numberOfEnemies = 0;
     [SerializeField] float timeBetweenEnemies = 0.0f;
 
     private List<Enemy> enemies = null;
     private Transform[] currentPoints = null;
     private int[] indexPoints = null;
+    private List<Transform> waypoints = null;
 
     void Start()
     {
+        waypoints = FindObjectOfType<Waypoints>().GetWaypoints();
         enemies = new List<Enemy>();
-        StartCoroutine(InstantiateRandomEnemies());
+        //StartCoroutine(InstantiateRandomEnemies());
         InitializePoints();
     }
 
@@ -29,7 +28,7 @@ public class EnemyWaypoints : MonoBehaviour
         UpdateCurrentPoints();
     }
 
-    private IEnumerator InstantiateRandomEnemies()
+    public IEnumerator InstantiateRandomEnemies()
     {
         while (numberOfEnemies > 1)
         {
@@ -40,16 +39,7 @@ public class EnemyWaypoints : MonoBehaviour
         }
     }
 
-    /*
-    private void InstantiateRandomEnemy()
-    {
-        for(int i=0; i<enemiesPrefabs.Count; i++)
-        {
-
-        }
-    }*/
-
-    private void InitializePoints()
+    public void InitializePoints()
     {
         currentPoints = new Transform[numberOfEnemies];
         indexPoints = new int[numberOfEnemies];
@@ -62,7 +52,7 @@ public class EnemyWaypoints : MonoBehaviour
 
     private void MoveTowardsNextPoints()
     {
-        for(int i=0; i<enemies.Count; i++)
+        for (int i = 0; i < enemies.Count; i++)
         {
             if (enemies[i] != null && enemies[i].GetHealth() > 0.0f)
             {
@@ -75,7 +65,7 @@ public class EnemyWaypoints : MonoBehaviour
 
     private void UpdateCurrentPoints()
     {
-        for(int i=0; i<enemies.Count; i++)
+        for (int i = 0; i < enemies.Count; i++)
         {
             if (enemies[i] != null && enemies[i].transform.position == currentPoints[i].position) //enemy can be destroyed => null
             {
@@ -91,5 +81,15 @@ public class EnemyWaypoints : MonoBehaviour
     public List<Enemy> GetEnemies()
     {
         return enemies;
+    }
+    
+    public float GetNoOfEnemies()
+    {
+        return numberOfEnemies;
+    }
+
+    public float GetTimeBetweenEnemies()
+    {
+        return timeBetweenEnemies;
     }
 }
