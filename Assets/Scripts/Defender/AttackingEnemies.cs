@@ -8,7 +8,9 @@ public class AttackingEnemies : MonoBehaviour
     [SerializeField] GameObject weapon = null;
     [SerializeField] GameObject spawnProjectile = null;
     [SerializeField] float timer = 0.0f;
+
     private float localTime = 0.0f;
+    private string WAVE_TAG = "wave";
 
     void Update()
     {
@@ -21,27 +23,37 @@ public class AttackingEnemies : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapCircleAll(this.transform.position, radius);
         try
         {
-            Wave enemy = GameObject.Find("Wave 1").GetComponent<Wave>();
-            List<Enemy> enemies = enemy.GetEnemies();
-            for(int i=0; i< enemies.Count; i++)
+            GameObject[] waves = GameObject.FindGameObjectsWithTag(WAVE_TAG);
+            for (int k = 0; k < waves.Length; k++)
             {
-                bool isInRange = false;
-                for(int j=0; j<colliders.Length; j++)
+                bool hasWaves = false;
+                Wave enemy = waves[k].GetComponent<Wave>() as Wave;
+                List<Enemy> enemies = enemy.GetEnemies();
+                for (int i = 0; i < enemies.Count; i++)
                 {
-                    if (enemies[i] != null && colliders[j].gameObject == enemies[i].gameObject)
+                    bool isInRange = false;
+                    for (int j = 0; j < colliders.Length; j++)
                     {
-                        Enemy en = enemies[i].GetComponent<Enemy>() as Enemy;
-                        if (en.GetHealth() >= 0.0f)
+                        if (enemies[i] != null && colliders[j].gameObject == enemies[i].gameObject)
                         {
-                            Collider2D enemyCollider = enemies[i].GetComponent<Collider2D>() as Collider2D;
-                            RotateTowards(enemyCollider, this.gameObject);
-                            Shoot(enemies[i]);
-                            isInRange = true;
-                            break;
+                            Enemy en = enemies[i].GetComponent<Enemy>() as Enemy;
+                            if (en.GetHealth() >= 0.0f)
+                            {
+                                Collider2D enemyCollider = enemies[i].GetComponent<Collider2D>() as Collider2D;
+                                RotateTowards(enemyCollider, this.gameObject);
+                                Shoot(enemies[i]);
+                                isInRange = true;
+                                break;
+                            }
                         }
                     }
+                    if (isInRange)
+                    {
+                        hasWaves = true;
+                        break;
+                    }
                 }
-                if (isInRange)
+                if (hasWaves)
                     break;
             }
         }
