@@ -26,12 +26,11 @@ public class AttackingEnemies : MonoBehaviour
             GameObject[] waves = GameObject.FindGameObjectsWithTag(WAVE_TAG);
             for (int k = 0; k < waves.Length; k++)
             {
-                bool hasWaves = false;
+                bool isInRange = false;
                 Wave enemy = waves[k].GetComponent<Wave>() as Wave;
                 List<Enemy> enemies = enemy.GetEnemies();
                 for (int i = 0; i < enemies.Count; i++)
                 {
-                    bool isInRange = false;
                     for (int j = 0; j < colliders.Length; j++)
                     {
                         if (enemies[i] != null && colliders[j].gameObject == enemies[i].gameObject)
@@ -48,12 +47,9 @@ public class AttackingEnemies : MonoBehaviour
                         }
                     }
                     if (isInRange)
-                    {
-                        hasWaves = true;
                         break;
-                    }
                 }
-                if (hasWaves)
+                if (isInRange)
                     break;
             }
         }
