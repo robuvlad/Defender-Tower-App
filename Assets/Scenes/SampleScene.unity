@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 2323725811656276300, guid: 0af25634053586541a2b49875ee0b103, type: 3}
-  numberOfEnemies: 6
+  numberOfEnemies: 2
   timeBetweenEnemies: 1
 --- !u!1 &107763123
 GameObject:
@@ -316,6 +316,7 @@ Transform:
   m_Children:
   - {fileID: 93194468}
   - {fileID: 931273559}
+  - {fileID: 321350895}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -410,6 +411,52 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &321350893
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 321350895}
+  - component: {fileID: 321350894}
+  m_Layer: 0
+  m_Name: Wave 3
+  m_TagString: wave
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &321350894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321350893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de7f6232dea9c254eb9f1923cb49845a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 637073287106745914, guid: 2b0cf48d92a6c09418eedacf75bc79d4, type: 3}
+  numberOfEnemies: 5
+  timeBetweenEnemies: 4
+--- !u!4 &321350895
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321350893}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.75, y: -1.85, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 295948144}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &464429207
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,7 +519,8 @@ MonoBehaviour:
   waves:
   - {fileID: 93194469}
   - {fileID: 931273558}
-  delayTime: 1
+  - {fileID: 321350894}
+  delayTime: 2
 --- !u!4 &487200679
 Transform:
   m_ObjectHideFlags: 0
@@ -1220,7 +1268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 2235167841150405213, guid: 40398563d19c5a9438f65aa1905b562f, type: 3}
-  numberOfEnemies: 5
+  numberOfEnemies: 3
   timeBetweenEnemies: 2
 --- !u!4 &931273559
 Transform:
