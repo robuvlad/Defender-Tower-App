@@ -41,9 +41,6 @@ TextureImporter:
   - first:
       213: 6027714346852069359
     second: turtle_spritesheet_12
-  - first:
-      213: -8958130697324855211
-    second: turtle_spritesheet_13
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -87,7 +84,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -166,7 +163,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: baedbc928dd374d44982aa47bcb4fb75
+      spriteID: ab45d19d964ddd64480c91bcab0c7290
       internalID: 1179695813187114568
       vertices: []
       indices: 
@@ -187,7 +184,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32032670eff5f044a884fe9f12bc8d36
+      spriteID: dde1e47c29b3a96498ec40a73142a651
       internalID: -7044641995120480525
       vertices: []
       indices: 
@@ -208,7 +205,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1b05b6a3fd64754cadb3dab8d430353
+      spriteID: 4fc76e1f246101e48a67590cab74e469
       internalID: 6874044193121919590
       vertices: []
       indices: 
@@ -229,7 +226,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 612c0a52d030a6a4db7eef3b2cbfa2fe
+      spriteID: ec0563017a5dce54d99c4a0b6e896343
       internalID: -8504548092058881320
       vertices: []
       indices: 
@@ -250,7 +247,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 515a2bdcb63fd5143b02d136bfee8c34
+      spriteID: 9e3a9019fa3c8694882e15ab364897e8
       internalID: -2231975636257897124
       vertices: []
       indices: 
@@ -271,7 +268,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99a518632247fa542a8c3b463678a6c7
+      spriteID: 125dade932b6bee48b8196344b0eb308
       internalID: 3441719561776446320
       vertices: []
       indices: 
@@ -292,7 +289,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5290a78cd937c694f92cdbf6255b6f51
+      spriteID: 9c9ee8a1b91e18d4ba4e1fac58b52cb7
       internalID: -2152670787227815186
       vertices: []
       indices: 
@@ -313,7 +310,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eddaaba2c46ba1d44965aa75be5d6dba
+      spriteID: a78afcacf68c1d44da834d708fc7af2a
       internalID: -4251323375454592160
       vertices: []
       indices: 
@@ -334,7 +331,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b1f83171e8441b488aec08e29bd985e
+      spriteID: d95a1e131603b7c459d311883ace7852
       internalID: 7262508570016343003
       vertices: []
       indices: 
@@ -355,7 +352,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 209fb440a9ae959479c0c298112ed6ed
+      spriteID: 96967b70469225a46b76dba933044ad4
       internalID: -1071199144698999933
       vertices: []
       indices: 
@@ -376,7 +373,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35cecd31851e13a4a871043330f2ea60
+      spriteID: 877f0c0929705f247ad743be73bd5d5a
       internalID: 7175587561536574051
       vertices: []
       indices: 
@@ -397,7 +394,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8d1c016b69652f4888a5e603c56f7a9
+      spriteID: 6af0a4b9a90036d49bff22284b6cdd8a
       internalID: -1631132957098676493
       vertices: []
       indices: 
@@ -418,29 +415,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81f42fee4bcebf24eb283ef0bd0576d8
+      spriteID: 12b3c6b92033f6741bdaeaa32e1f978e
       internalID: 6027714346852069359
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: turtle_spritesheet_13
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6078bc231dad31e4e9b1dbdea5d09d35
-      internalID: -8958130697324855211
       vertices: []
       indices: 
       edges: []
