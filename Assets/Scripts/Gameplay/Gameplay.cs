@@ -4,19 +4,42 @@ using UnityEngine;
 
 public class Gameplay : MonoBehaviour
 {
+    [SerializeField] GameObject panel = null;
+
     private bool isPaused = false;
 
-    public void PauseOrContinue()
+    void Start()
+    {
+        SetPanelInactive();
+    }
+
+    public void Pause()
     {
         if (!isPaused)
         {
             Time.timeScale = 0;
+            SetPanelActive();
             isPaused = true;
         }
-        else
+    }
+
+    public void Resume()
+    {
+        if (isPaused)
         {
             Time.timeScale = 1;
+            SetPanelInactive();
             isPaused = false;
         }
+    }
+
+    private void SetPanelInactive()
+    {
+        panel.SetActive(false);
+    }
+
+    private void SetPanelActive()
+    {
+        panel.SetActive(true);
     }
 }
