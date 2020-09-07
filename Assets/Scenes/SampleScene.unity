@@ -1198,7 +1198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 2235167841150405213, guid: 40398563d19c5a9438f65aa1905b562f, type: 3}
-  numberOfEnemies: 3
+  numberOfEnemies: 2
   timeBetweenEnemies: 2
 --- !u!4 &931273559
 Transform:
