@@ -85,7 +85,7 @@ public class AttackingEnemies : MonoBehaviour
         {
             GameObject projectile = Instantiate(weapon, spawnProjectile.transform.position, this.gameObject.transform.rotation);
             PlayAudio();
-            float projectileSpeed = projectile.GetComponent<ProjectileConfig>().Speed;
+            float projectileSpeed = projectile.GetComponent<Projectile>().GetProjectileSpeed();
             Vector2 relativePoint = transform.right * projectileSpeed;
             projectile.GetComponent<Rigidbody2D>().velocity = relativePoint;
             localTime = timer;

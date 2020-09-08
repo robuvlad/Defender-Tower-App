@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] float health = 0.0f;
     [SerializeField] float speed = 0.0f;
+    [SerializeField] int points = 0;
 
     public void SetHealth(float h)
     {
@@ -25,5 +26,15 @@ public class Enemy : MonoBehaviour
     public float GetSpeed()
     {
         return speed;
+    }
+
+    public int GetPoints()
+    {
+        return points;
+    }
+
+    public void SetPoints(int p)
+    {
+        this.points = p;
     }
 }
