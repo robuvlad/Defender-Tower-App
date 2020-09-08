@@ -6,6 +6,7 @@ public class Defender : MonoBehaviour
 {
     [Header("Setup configuration")]
     [SerializeField] float radius = 0.0f;
+    [SerializeField] int points;
 
     [Range(0, 50)]
     private int segments = 150;
@@ -63,5 +64,10 @@ public class Defender : MonoBehaviour
     {
         line.positionCount = 1;
         line = null;
+    }
+
+    public int GetPoints()
+    {
+        return points;
     }
 }

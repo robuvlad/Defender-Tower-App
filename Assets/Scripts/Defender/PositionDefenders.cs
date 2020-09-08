@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PositionDefenders : MonoBehaviour
 {
-    private GameObject defender = null;
+    private Defender defender = null;
 
     private Vector3 SPAWNING_POINT = new Vector3(0, 0, -1);
 
@@ -17,12 +17,17 @@ public class PositionDefenders : MonoBehaviour
     {
         if (defender != null)
         {
-            GameObject newDefender = Instantiate(defender, transform.position + SPAWNING_POINT, Quaternion.identity) as GameObject;
-            Destroy(GetComponent<BoxCollider2D>());
+            var points = FindObjectOfType<PointsHandler>() as PointsHandler;
+            if (points.GetTotalPoints() >= defender.GetPoints())
+            {
+                Defender newDefender = Instantiate(defender, transform.position + SPAWNING_POINT, Quaternion.identity) as Defender;
+                points.DecreasePoints(newDefender.GetPoints());
+                Destroy(GetComponent<BoxCollider2D>());
+            }
         }
     }
 
-    public void SetDefender(GameObject def)
+    public void SetDefender(Defender def)
     {
         this.defender = def;
     }

@@ -5,9 +5,8 @@ using UnityEngine.UI;
 
 public class PointsHandler : MonoBehaviour
 {
+    [SerializeField] int totalPoints = 0;
     [SerializeField] Text pointsText = null;
-
-    private int totalPoints = 0;
 
     void Update()
     {

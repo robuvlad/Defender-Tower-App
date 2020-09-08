@@ -322,6 +322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 4
+  points: 150
 --- !u!1 &621932770782300298
 GameObject:
   m_ObjectHideFlags: 0
