@@ -6,11 +6,8 @@ using UnityEngine.UI;
 public class DefenderSelection : MonoBehaviour
 {
     [SerializeField] Defender defender = null;
-    [SerializeField] bool isAvailable = false;
 
-    [Header("Lock / Unlock Level")]
-    [SerializeField] Text unlockMessage = null;
-    [SerializeField] int levelUnlocked;
+    [Header("Not enough points panel")]
     [SerializeField] GameObject panel = null;
 
     private float timeToUnlock = 1.0f;
@@ -22,25 +19,31 @@ public class DefenderSelection : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (isAvailable)
+        var points = FindObjectOfType<PointsHandler>() as PointsHandler;
+        if (points.GetTotalPoints() >= defender.GetPoints())
         {
             var defenders = FindObjectsOfType<DefenderSelection>();
             foreach (DefenderSelection def in defenders)
             {
-                if (def.IsAvailable())
-                    def.GetComponent<SpriteRenderer>().color = new Color32(100, 100, 100, 255);
-                else
-                    def.GetComponent<SpriteRenderer>().color = new Color32(0, 0, 0, 255);
+                LockDefender(def);
             }
-            GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
+            UnlockDefender();
             PlaceDefender(defender);
         }
         else
         {
-            unlockMessage.text = "First unlock level " + levelUnlocked;
-            StartCoroutine(ShowUnlockMessage());
+            StartCoroutine(ShowNotEnoughPoints());
         }
-        
+    }
+
+    public void LockDefender(DefenderSelection def)
+    {
+        def.GetComponent<SpriteRenderer>().color = new Color32(50, 50, 50, 255);
+    }
+
+    public void UnlockDefender()
+    {
+        GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
     }
 
     private void PlaceDefender(Defender def)
@@ -52,15 +55,10 @@ public class DefenderSelection : MonoBehaviour
         }
     }
 
-    private IEnumerator ShowUnlockMessage()
+    private IEnumerator ShowNotEnoughPoints()
     {
         panel.SetActive(true);
         yield return new WaitForSeconds(timeToUnlock);
         panel.SetActive(false);
-    }
-
-    public bool IsAvailable()
-    {
-        return isAvailable;
     }
 }

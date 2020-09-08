@@ -24,6 +24,21 @@ public class PositionDefenders : MonoBehaviour
                 points.DecreasePoints(newDefender.GetPoints());
                 Destroy(GetComponent<BoxCollider2D>());
             }
+            LockDefenders();
+        }
+    }
+
+    private void LockDefenders()
+    {
+        DefenderSelection[] defenders = FindObjectsOfType<DefenderSelection>();
+        foreach(DefenderSelection def in defenders)
+        {
+            def.LockDefender(def);
+        }
+        PositionDefenders[] positions = FindObjectsOfType<PositionDefenders>();
+        foreach(PositionDefenders pos in positions)
+        {
+            pos.SetDefender(null);
         }
     }
 
