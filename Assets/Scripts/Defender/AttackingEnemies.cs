@@ -11,6 +11,12 @@ public class AttackingEnemies : MonoBehaviour
 
     private float localTime = 0.0f;
     private string WAVE_TAG = "wave";
+    private AudioSource audioShoot = null;
+
+    void Start()
+    {
+        audioShoot = GetComponent<AudioSource>() as AudioSource;
+    }
 
     void Update()
     {
@@ -78,10 +84,19 @@ public class AttackingEnemies : MonoBehaviour
         if (localTime <= 0.0f)
         {
             GameObject projectile = Instantiate(weapon, spawnProjectile.transform.position, this.gameObject.transform.rotation);
+            PlayAudio();
             float projectileSpeed = projectile.GetComponent<ProjectileConfig>().Speed;
             Vector2 relativePoint = transform.right * projectileSpeed;
             projectile.GetComponent<Rigidbody2D>().velocity = relativePoint;
             localTime = timer;
+        }
+    }
+
+    private void PlayAudio()
+    {
+        if (audioShoot != null)
+        {
+            audioShoot.Play();
         }
     }
 }
