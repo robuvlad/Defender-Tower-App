@@ -24,4 +24,9 @@ public class LevelLoader : MonoBehaviour
         sceneIndex += 1;
         SceneManager.LoadScene(sceneIndex);
     }
+
+    public void PlayLevel(int level)
+    {
+        SceneManager.LoadScene(level);
+    }
 }
