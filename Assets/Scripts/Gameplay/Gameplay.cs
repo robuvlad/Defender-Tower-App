@@ -8,6 +8,7 @@ public class Gameplay : MonoBehaviour
     [SerializeField] GameObject panel = null;
 
     private bool isPaused = false;
+    private const string MENU_SCENE = "Menu";
 
     void Start()
     {
@@ -37,6 +38,12 @@ public class Gameplay : MonoBehaviour
     public void Reset()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
+    }
+
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene(MENU_SCENE);
         Time.timeScale = 1;
     }
 
