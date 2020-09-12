@@ -18,7 +18,6 @@ public class Wave : MonoBehaviour
     {
         waypoints = FindObjectOfType<Waypoints>().GetWaypoints();
         enemies = new List<Enemy>();
-        //StartCoroutine(InstantiateRandomEnemies());
         InitializePoints();
     }
 
@@ -30,7 +29,7 @@ public class Wave : MonoBehaviour
 
     public IEnumerator InstantiateRandomEnemies()
     {
-        while (numberOfEnemies > 1)
+        while (numberOfEnemies > 0)
         {
             var newEnemy = Instantiate(enemy, waypoints[0].transform.position, Quaternion.identity);
             enemies.Add(newEnemy);

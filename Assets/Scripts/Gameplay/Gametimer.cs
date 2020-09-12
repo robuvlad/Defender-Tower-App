@@ -6,35 +6,39 @@ using UnityEngine.UI;
 public class Gametimer : MonoBehaviour
 {
     [SerializeField] float extraTime = 0.0f;
+    private Animator animator = null;
 
     private Slider slider = null;
     private float totalTime;
 
+    private const float MAX_SLIDER_VALUE = 1.0f;
+    private const float MIN_SLIDER_VALUE = 1.0f;
+    private const string IS_MAX_STRING = "isMax";
+
     void Start()
     {
-        SetupTimer();
+        animator = GetComponentInChildren<Animator>() as Animator;
     }
 
-    void Update()
-    {
-        UpdateSliderValue();
-    }
-
-    private void SetupTimer()
+    public void SetupTimer(Wave currentWave)
     {
         slider = GetComponent<Slider>() as Slider;
         slider.enabled = false;
+        slider.value = MIN_SLIDER_VALUE;
         totalTime = extraTime;
-        Waves waves = FindObjectOfType<Waves>() as Waves;
-        foreach (Wave wave in waves.GetWaves())
-        {
-            totalTime += wave.GetNoOfEnemies() * wave.GetTimeBetweenEnemies();
-        }
-        totalTime += waves.GetDelayTime();
+        totalTime += currentWave.GetNoOfEnemies() * currentWave.GetTimeBetweenEnemies() - currentWave.GetTimeBetweenEnemies();
     }
 
-    private void UpdateSliderValue()
+    public void UpdateSliderValue(float waveTime)
     {
-        slider.value = Time.timeSinceLevelLoad / totalTime;
+        slider.value = waveTime / totalTime;
+        if (slider.value >= MAX_SLIDER_VALUE)
+        {
+            animator.SetBool(IS_MAX_STRING, true);
+        }
+        else
+        {
+            animator.SetBool(IS_MAX_STRING, false);
+        }
     }
 }

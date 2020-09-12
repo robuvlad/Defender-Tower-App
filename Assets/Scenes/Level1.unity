@@ -165,7 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 2323725811656276300, guid: 0af25634053586541a2b49875ee0b103, type: 3}
   numberOfEnemies: 2
-  timeBetweenEnemies: 1
+  timeBetweenEnemies: 2
 --- !u!1 &107763123
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,7 +729,6 @@ MonoBehaviour:
   - {fileID: 93194469}
   - {fileID: 931273558}
   - {fileID: 321350894}
-  delayTime: 2
   waveText: {fileID: 2094124149}
 --- !u!4 &487200679
 Transform:
@@ -1254,7 +1253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa9f119ed14b41945b478f6f6917aab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalPoints: 200
+  totalPoints: 800
   pointsText: {fileID: 329055309}
 --- !u!1 &653728560
 GameObject:
@@ -1742,7 +1741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 2235167841150405213, guid: 40398563d19c5a9438f65aa1905b562f, type: 3}
   numberOfEnemies: 2
-  timeBetweenEnemies: 2
+  timeBetweenEnemies: 3
 --- !u!4 &931273559
 Transform:
   m_ObjectHideFlags: 0
@@ -2109,7 +2108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2c5d0a637f374545b99480b57b77af5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  extraTime: 1
+  extraTime: 0
 --- !u!1 &1310168715
 GameObject:
   m_ObjectHideFlags: 0
