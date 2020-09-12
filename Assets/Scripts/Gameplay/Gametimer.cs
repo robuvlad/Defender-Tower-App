@@ -12,7 +12,7 @@ public class Gametimer : MonoBehaviour
     private float totalTime;
 
     private const float MAX_SLIDER_VALUE = 1.0f;
-    private const float MIN_SLIDER_VALUE = 1.0f;
+    private const float MIN_SLIDER_VALUE = 0.0f;
     private const string IS_MAX_STRING = "isMax";
 
     void Start()

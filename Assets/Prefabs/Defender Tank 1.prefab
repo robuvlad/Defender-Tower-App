@@ -363,3 +363,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 5
   points: 100
+  R: 235
+  G: 0
+  B: 0

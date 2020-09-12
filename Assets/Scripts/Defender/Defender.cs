@@ -8,6 +8,11 @@ public class Defender : MonoBehaviour
     [SerializeField] float radius = 0.0f;
     [SerializeField] int points;
 
+    [Header("Line renderer config")]
+    [SerializeField] float R;
+    [SerializeField] float G;
+    [SerializeField] float B;
+
     [Range(0, 50)]
     private int segments = 150;
     private LineRenderer line = null;
@@ -49,6 +54,7 @@ public class Defender : MonoBehaviour
         float x, y;
         float angle = 20f;
         line.positionCount = segments + 1;
+        line.material.color = new Color(R, G, B);
         for (int i = 0; i < (segments + 1); i++)
         {
             x = Mathf.Sin(Mathf.Deg2Rad * angle) * radius;
