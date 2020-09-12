@@ -8,6 +8,9 @@ public class LevelLoader : MonoBehaviour
     [SerializeField] float timeToWait = 0.0f;
 
     private int sceneIndex;
+    private const string SETTINGS_SCENE = "Settings";
+    private const string MENU_SCENE = "Menu";
+    
 
     void Start()
     {
@@ -28,5 +31,15 @@ public class LevelLoader : MonoBehaviour
     public void PlayLevel(int level)
     {
         SceneManager.LoadScene(level);
+    }
+
+    public void LoadSettings()
+    {
+        SceneManager.LoadScene(SETTINGS_SCENE);
+    }
+
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene(MENU_SCENE);
     }
 }

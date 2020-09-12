@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: circle_3
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 21300000, guid: 5a4f91621968bf542934dcc2fb0d5d81, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
   m_Transform:
     e00: 1
     e01: 0

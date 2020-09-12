@@ -20,19 +20,12 @@ public class Waves : MonoBehaviour
     {
         while(noOfWaves > 0)
         {
-            ShowWavePanel(waves.Count - noOfWaves + 1);
             Wave currentWave = waves[waves.Count - noOfWaves];
             float totalTime = currentWave.GetNoOfEnemies() * currentWave.GetTimeBetweenEnemies() + delayTime;
             StartCoroutine(currentWave.InstantiateRandomEnemies());
             noOfWaves -= 1;
             yield return new WaitForSeconds(totalTime);
         }
-    }
-
-    private void ShowWavePanel(int currentWave)
-    {
-        var wavePanel = FindObjectOfType<WavePanel>();
-        StartCoroutine(wavePanel.ShowWavePanel(currentWave, waves.Count));
     }
 
     public float GetDelayTime()
