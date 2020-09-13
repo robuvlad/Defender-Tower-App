@@ -39,12 +39,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1874449557121424176}
-  - component: {fileID: 1874449557121424177}
-  - component: {fileID: 5652401682240813796}
-  - component: {fileID: 1874449557121424190}
-  - component: {fileID: 1190777578276127622}
-  - component: {fileID: 1874449557121424191}
-  - component: {fileID: 7846223743700864689}
+  - component: {fileID: 7177624026048916257}
+  - component: {fileID: 8332741287329393611}
+  - component: {fileID: 821787770433340748}
+  - component: {fileID: 7136363919966720528}
+  - component: {fileID: 3269206906566329259}
+  - component: {fileID: 8616479955595290161}
   m_Layer: 0
   m_Name: Defender Tank 1
   m_TagString: Untagged
@@ -60,14 +60,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1874449557121424188}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5, y: 5, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1874449555640258756}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1874449557121424177
+--- !u!212 &7177624026048916257
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,7 +116,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &5652401682240813796
+--- !u!61 &8332741287329393611
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,7 +142,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.4781626, y: 1.2753277}
   m_EdgeRadius: 0
---- !u!120 &1874449557121424190
+--- !u!120 &821787770433340748
 LineRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -238,7 +238,7 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!82 &1190777578276127622
+--- !u!82 &7136363919966720528
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -334,7 +334,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1874449557121424191
+--- !u!114 &3269206906566329259
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -349,7 +349,7 @@ MonoBehaviour:
   weapon: {fileID: 9115922705714663053, guid: 9a0c07bce436f9649b48d830bb903c59, type: 3}
   spawnProjectile: {fileID: 1874449555640258757}
   timer: 0.5
---- !u!114 &7846223743700864689
+--- !u!114 &8616479955595290161
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -363,6 +363,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 5
   points: 100
+  upgradeArrow: {fileID: 4286563504538271423, guid: 7e77ab2ed852f0e489c757a1cefc2f5e,
+    type: 3}
+  upgradeDefender: {fileID: 5025204222285712643, guid: d8dbf2007b4cf824cbaeed9c08a2beaf,
+    type: 3}
   R: 235
   G: 0
   B: 0

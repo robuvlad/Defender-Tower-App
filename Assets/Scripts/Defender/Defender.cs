@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Defender : MonoBehaviour
 {
-    [Header("Setup configuration")]
+    [Header("Setup config")]
     [SerializeField] float radius = 0.0f;
     [SerializeField] int points;
+
+    [Header("Upgrade config")]
+    [SerializeField] GameObject upgradeArrow = null;
+    [SerializeField] Defender upgradeDefender = null;
 
     [Header("Line renderer config")]
     [SerializeField] float R;
@@ -23,6 +27,8 @@ public class Defender : MonoBehaviour
     private const float MAP_MAX = 50.0f;
     private const float MAP_MIN = -50.0f;
 
+    private GameObject arrow = null;
+
     public float GetRadius()
     {
         return radius;
@@ -34,10 +40,12 @@ public class Defender : MonoBehaviour
         {
             InitializeLineRenderer();
             CreateLineRenderer();
+            ShowUpgradeArrow();
         }
         else
         {
             DestroyLineRenderer();
+            DestroyUpgradeArrow();
         }
     }
 
@@ -72,8 +80,24 @@ public class Defender : MonoBehaviour
         line = null;
     }
 
+    private void ShowUpgradeArrow()
+    {
+        arrow = Instantiate(upgradeArrow, gameObject.transform.position, Quaternion.identity);
+        arrow.transform.parent = gameObject.transform;
+    }
+
+    private void DestroyUpgradeArrow()
+    {
+        Destroy(arrow);
+    }
+
     public int GetPoints()
     {
         return points;
+    }
+
+    public Defender GetUpgradeDefender()
+    {
+        return upgradeDefender;
     }
 }

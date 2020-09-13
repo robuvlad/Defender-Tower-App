@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class Gate : MonoBehaviour
 {
+    [SerializeField] GameObject gameOverPanel = null;
+
     private const string ENEMY_TAG = "enemy";
+
+    void Start()
+    {
+        gameOverPanel.SetActive(false);
+    }
 
     public void OnTriggerEnter2D(Collider2D other)
     {
@@ -21,7 +28,8 @@ public class Gate : MonoBehaviour
         lives.DecreaseLives(1);
         if (lives.GetTotalLives() <= 0)
         {
-            Debug.Log("Game Over!");
+            gameOverPanel.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 }

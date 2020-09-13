@@ -323,6 +323,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 4
   points: 150
+  upgradeArrow: {fileID: 4286563504538271423, guid: 7e77ab2ed852f0e489c757a1cefc2f5e,
+    type: 3}
+  upgradeDefender: {fileID: 8616479955595290161, guid: abe5e69c9dda18346829ecedcff5230a,
+    type: 3}
   R: 100
   G: 100
   B: 100
