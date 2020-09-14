@@ -9,8 +9,9 @@ public class Defender : MonoBehaviour
     [SerializeField] int points;
 
     [Header("Upgrade config")]
-    [SerializeField] GameObject upgradeArrow = null;
     [SerializeField] Defender upgradeDefender = null;
+    [SerializeField] GameObject textUpgrade = null;
+    [SerializeField] GameObject textSell = null;
 
     [Header("Sell config")]
     [SerializeField] int sellPoints = 0;
@@ -30,8 +31,6 @@ public class Defender : MonoBehaviour
     private const float MAP_MAX = 50.0f;
     private const float MAP_MIN = -50.0f;
 
-    private GameObject arrow = null;
-
     public float GetRadius()
     {
         return radius;
@@ -43,12 +42,12 @@ public class Defender : MonoBehaviour
         {
             InitializeLineRenderer();
             CreateLineRenderer();
-            ShowUpgradeArrow();
+            ShowDefenderTools();
         }
         else
         {
             DestroyLineRenderer();
-            DestroyUpgradeArrow();
+            HideDefenderTools();
         }
     }
 
@@ -83,15 +82,28 @@ public class Defender : MonoBehaviour
         line = null;
     }
 
-    private void ShowUpgradeArrow()
+    private void ShowDefenderTools()
     {
-        arrow = Instantiate(upgradeArrow, gameObject.transform.position, Quaternion.identity);
-        arrow.transform.parent = gameObject.transform;
+        SetDefenderTools(gameObject, false);
     }
 
-    private void DestroyUpgradeArrow()
+    private void HideDefenderTools()
     {
-        Destroy(arrow);
+        SetDefenderTools(null, true);
+    }
+
+
+    private void SetDefenderTools(GameObject obj, bool isSelected)
+    {
+        DefenderTools[] tools = FindObjectsOfType<DefenderTools>();
+        foreach (DefenderTools tool in tools)
+        {
+            if (isSelected == false)
+                tool.ShowColor();
+            else
+                tool.HideColor();
+            tool.SetDefender(obj, upgradeDefender, textUpgrade, textSell);
+        }
     }
 
     public int GetPoints()
