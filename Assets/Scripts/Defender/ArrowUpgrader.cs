@@ -9,8 +9,13 @@ public class ArrowUpgrader : MonoBehaviour
     {
         Vector3 pos = gameObject.transform.parent.parent.gameObject.transform.position;
         var upgradeDefender = gameObject.transform.parent.parent.gameObject.GetComponent<Defender>().GetUpgradeDefender();
-        Debug.Log(upgradeDefender);
-        Destroy(gameObject.transform.parent.parent.gameObject);
-        Instantiate(upgradeDefender, pos, Quaternion.identity);
+        var points = FindObjectOfType<PointsHandler>();
+        if (upgradeDefender != null && points.GetTotalPoints() >= upgradeDefender.GetPoints())
+        {
+            Destroy(gameObject.transform.parent.parent.gameObject);
+            Defender def = Instantiate(upgradeDefender, pos, Quaternion.identity) as Defender;
+            points.DecreasePoints(def.GetPoints());
+        }
     }
+
 }

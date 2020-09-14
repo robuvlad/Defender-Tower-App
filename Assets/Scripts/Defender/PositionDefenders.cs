@@ -22,7 +22,7 @@ public class PositionDefenders : MonoBehaviour
             {
                 Defender newDefender = Instantiate(defender, transform.position + SPAWNING_POINT, Quaternion.identity) as Defender;
                 points.DecreasePoints(newDefender.GetPoints());
-                Destroy(GetComponent<BoxCollider2D>());
+                //Destroy(GetComponent<BoxCollider2D>());
             }
             LockDefenders();
         }

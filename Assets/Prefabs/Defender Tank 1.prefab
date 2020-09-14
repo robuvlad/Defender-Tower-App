@@ -367,6 +367,7 @@ MonoBehaviour:
     type: 3}
   upgradeDefender: {fileID: 5025204222285712643, guid: d8dbf2007b4cf824cbaeed9c08a2beaf,
     type: 3}
+  sellPoints: 80
   R: 235
   G: 0
   B: 0

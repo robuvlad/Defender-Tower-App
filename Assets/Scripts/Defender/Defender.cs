@@ -12,6 +12,9 @@ public class Defender : MonoBehaviour
     [SerializeField] GameObject upgradeArrow = null;
     [SerializeField] Defender upgradeDefender = null;
 
+    [Header("Sell config")]
+    [SerializeField] int sellPoints = 0;
+
     [Header("Line renderer config")]
     [SerializeField] float R;
     [SerializeField] float G;
@@ -99,5 +102,10 @@ public class Defender : MonoBehaviour
     public Defender GetUpgradeDefender()
     {
         return upgradeDefender;
+    }
+
+    public int GetSellPoints()
+    {
+        return sellPoints;
     }
 }
