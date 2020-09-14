@@ -5,6 +5,7 @@ using UnityEngine;
 public class NextLevel : MonoBehaviour
 {
     [SerializeField] GameObject nextLevelPanel = null;
+    [SerializeField] float duration = 0.4f;
 
     void Start()
     {
@@ -14,5 +15,19 @@ public class NextLevel : MonoBehaviour
     public void ShowPanel()
     {
         nextLevelPanel.SetActive(true);
+        var canvasGroup = nextLevelPanel.GetComponent<CanvasGroup>();
+        StartCoroutine(DoFade(canvasGroup, canvasGroup.alpha, 1));
     }
+
+    private IEnumerator DoFade(CanvasGroup canvas, float start, float end)
+    {
+        float counter = 0f;
+        while(counter < duration)
+        {
+            counter += Time.deltaTime;
+            canvas.alpha = Mathf.Lerp(start, end, counter / duration);
+            yield return null;
+        }
+    }
+
 }

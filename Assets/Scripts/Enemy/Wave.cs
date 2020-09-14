@@ -14,6 +14,8 @@ public class Wave : MonoBehaviour
     private int[] indexPoints = null;
     private List<Transform> waypoints = null;
 
+    private bool hasSpawnedFinished = false;
+
     void Start()
     {
         waypoints = FindObjectOfType<Waypoints>().GetWaypoints();
@@ -36,6 +38,7 @@ public class Wave : MonoBehaviour
             numberOfEnemies -= 1;
             yield return new WaitForSeconds(timeBetweenEnemies);
         }
+        hasSpawnedFinished = true;
     }
 
     public void InitializePoints()
@@ -90,5 +93,10 @@ public class Wave : MonoBehaviour
     public float GetTimeBetweenEnemies()
     {
         return timeBetweenEnemies;
+    }
+
+    public bool HasSpawnedFinished()
+    {
+        return hasSpawnedFinished;
     }
 }

@@ -32,4 +32,5 @@ public class Gate : MonoBehaviour
             Time.timeScale = 0;
         }
     }
+
 }

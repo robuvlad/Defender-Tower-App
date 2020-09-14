@@ -45,16 +45,15 @@ public class Waves : MonoBehaviour
             StartCoroutine(currentWave.InstantiateRandomEnemies());
             canCheckForDeathEnemies = true;
             yield return new WaitUntil(() => canLoad == true);
-            canCheckForDeathEnemies = false;
-            yield return new WaitForSeconds(timeBetweenWaves);
             canLoad = false;
+            yield return new WaitForSeconds(timeBetweenWaves);
             noOfWaves -= 1;
         }
     }
 
     private void CheckForDeathEnemies()
     {
-        if (noOfWaves >= 1 && currentWave != null && canCheckForDeathEnemies == true)
+        if (noOfWaves >= 1 && currentWave != null && currentWave.HasSpawnedFinished() == true && canCheckForDeathEnemies == true)
         {
             List<Enemy> enemies = currentWave.GetEnemies();
             for (int i = 0; i < currentWave.GetEnemies().Count; i++)
@@ -63,6 +62,7 @@ public class Waves : MonoBehaviour
                     return;
             }
             canLoad = true;
+            canCheckForDeathEnemies = false;
         }
     }
 
