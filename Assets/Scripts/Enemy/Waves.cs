@@ -7,6 +7,7 @@ public class Waves : MonoBehaviour
 {
     [Header("Configurations")]
     [SerializeField] List<Wave> waves = null;
+    [SerializeField] float timeBetweenWaves = 0.0f;
 
     [Header("UI Config")]
     [SerializeField] Text waveText = null;
@@ -15,6 +16,8 @@ public class Waves : MonoBehaviour
     private bool canLoad = false;
     private Gametimer gametimer = null;
     private float waveTime = 0.0f;
+    private Wave currentWave = null;
+    private bool canCheckForDeathEnemies = false;
 
     void Start()
     {
@@ -28,6 +31,7 @@ public class Waves : MonoBehaviour
     {
         CheckForDeathEnemies();
         UpdateSlider();
+        FinishedLevel();
     }
 
     private IEnumerator InstantiateNewWave()
@@ -35,11 +39,14 @@ public class Waves : MonoBehaviour
         while(noOfWaves > 0)
         {
             SetWaveTextUI(waves.Count - noOfWaves + 1);
-            Wave currentWave = waves[waves.Count - noOfWaves];
+            currentWave = waves[waves.Count - noOfWaves];
             gametimer.SetupTimer(currentWave);
             waveTime = 0.0f;
             StartCoroutine(currentWave.InstantiateRandomEnemies());
+            canCheckForDeathEnemies = true;
             yield return new WaitUntil(() => canLoad == true);
+            canCheckForDeathEnemies = false;
+            yield return new WaitForSeconds(timeBetweenWaves);
             canLoad = false;
             noOfWaves -= 1;
         }
@@ -47,18 +54,30 @@ public class Waves : MonoBehaviour
 
     private void CheckForDeathEnemies()
     {
-        if (noOfWaves >= 1)
+        if (noOfWaves >= 1 && currentWave != null && canCheckForDeathEnemies == true)
         {
-            Wave currentWave = waves[waves.Count - noOfWaves];
             List<Enemy> enemies = currentWave.GetEnemies();
-            bool isNull = false;
             for (int i = 0; i < currentWave.GetEnemies().Count; i++)
             {
                 if (enemies[i] != null)
-                    isNull = true;
+                    return;
             }
-            if (!isNull)
-                canLoad = true;
+            canLoad = true;
+        }
+    }
+
+    private void FinishedLevel()
+    {
+        if (noOfWaves == 0)
+        {
+            List<Enemy> enemies = waves[waves.Count - noOfWaves - 1].GetEnemies();
+            foreach(Enemy enemy in enemies)
+            {
+                if (enemy != null)
+                    return;
+            }
+            FindObjectOfType<NextLevel>().ShowPanel();
+            noOfWaves -= 1;
         }
     }
 
@@ -68,9 +87,9 @@ public class Waves : MonoBehaviour
         gametimer.UpdateSliderValue(waveTime);
     }
 
-    private void SetWaveTextUI(int currentWave)
+    private void SetWaveTextUI(int currentWaveIndex)
     {
-        waveText.text = "Wave " + currentWave + "/" + waves.Count;
+        waveText.text = "Wave " + currentWaveIndex + "/" + waves.Count;
         GetComponent<AudioSource>().Play();
     }
 

@@ -9,6 +9,7 @@ public class Gameplay : MonoBehaviour
 
     private bool isPaused = false;
     private const string MENU_SCENE = "Menu";
+    private const int MAX_LEVEL_INDEX = 15;
 
     void Start()
     {
@@ -45,6 +46,15 @@ public class Gameplay : MonoBehaviour
     {
         SceneManager.LoadScene(MENU_SCENE);
         Time.timeScale = 1;
+    }
+
+    public void NextLevel()
+    {
+        int index = SceneManager.GetActiveScene().buildIndex;
+        if (index < MAX_LEVEL_INDEX)
+        {
+            SceneManager.LoadScene(index + 1);
+        }
     }
 
     private void SetPanelInactive()
