@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DefenderTools : MonoBehaviour
 {
-    [SerializeField] GameObject text;
+    [Header("Upper Points Text")]
+    [SerializeField] GameObject text = null;
 
     private GameObject defender = null;
     private Defender upgradeDefender = null;
@@ -22,6 +23,7 @@ public class DefenderTools : MonoBehaviour
         {
             Sell();
         }
+        GetComponent<AudioSource>().Play();
     }
 
     private void Upgrade()
@@ -107,4 +109,5 @@ public class DefenderTools : MonoBehaviour
             }
         }
     }
+
 }

@@ -29,6 +29,7 @@ public class Gate : MonoBehaviour
         if (lives.GetTotalLives() <= 0)
         {
             gameOverPanel.SetActive(true);
+            GetComponent<AudioSource>().Play();
             Time.timeScale = 0;
         }
     }

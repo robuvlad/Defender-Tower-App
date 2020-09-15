@@ -17,6 +17,7 @@ public class NextLevel : MonoBehaviour
         nextLevelPanel.SetActive(true);
         var canvasGroup = nextLevelPanel.GetComponent<CanvasGroup>();
         StartCoroutine(DoFade(canvasGroup, canvasGroup.alpha, 1));
+        GetComponent<AudioSource>().Play();
     }
 
     private IEnumerator DoFade(CanvasGroup canvas, float start, float end)

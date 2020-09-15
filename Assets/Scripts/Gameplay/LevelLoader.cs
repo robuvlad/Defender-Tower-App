@@ -31,6 +31,8 @@ public class LevelLoader : MonoBehaviour
     public void PlayLevel(int level)
     {
         SceneManager.LoadScene(level);
+        var audio = GetComponent<AudioSource>();
+        audio.Play();
     }
 
     public void LoadSettings()

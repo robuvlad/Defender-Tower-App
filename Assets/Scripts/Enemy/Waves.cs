@@ -90,6 +90,8 @@ public class Waves : MonoBehaviour
     private void SetWaveTextUI(int currentWaveIndex)
     {
         waveText.text = "Wave " + currentWaveIndex + "/" + waves.Count;
+        if (currentWaveIndex <= 1)
+            return;
         GetComponent<AudioSource>().Play();
     }
 

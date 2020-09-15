@@ -249,7 +249,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 28d5013785c204b4a9505e43ca95c615, type: 3}
+  m_audioClip: {fileID: 8300000, guid: fbf729ce7f696f74c9cfd2e2cd55f1ab, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -467,16 +467,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7145112355471410760, guid: 2e697d9dc43e26641bbb2c2e80b177c6,
-        type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7145112355471410760, guid: 2e697d9dc43e26641bbb2c2e80b177c6,
-        type: 3}
-      propertyPath: Loop
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e697d9dc43e26641bbb2c2e80b177c6, type: 3}
