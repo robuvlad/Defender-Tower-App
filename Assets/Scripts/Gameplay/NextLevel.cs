@@ -1,15 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NextLevel : MonoBehaviour
 {
+    [Header("Congrats Panel Config")]
     [SerializeField] GameObject nextLevelPanel = null;
     [SerializeField] float duration = 0.4f;
+
+    [Header("Types of stars")]
+    [SerializeField] List<GameObject> stars = null;
 
     void Start()
     {
         nextLevelPanel.SetActive(false);
+        foreach(GameObject star in stars)
+        {
+            star.SetActive(false);
+        }
     }
 
     public void ShowPanel()
@@ -17,7 +26,8 @@ public class NextLevel : MonoBehaviour
         nextLevelPanel.SetActive(true);
         var canvasGroup = nextLevelPanel.GetComponent<CanvasGroup>();
         StartCoroutine(DoFade(canvasGroup, canvasGroup.alpha, 1));
-        GetComponent<AudioSource>().Play();
+        PlayAudio();
+        ShowStars();
     }
 
     private IEnumerator DoFade(CanvasGroup canvas, float start, float end)
@@ -31,4 +41,32 @@ public class NextLevel : MonoBehaviour
         }
     }
 
+    private void PlayAudio()
+    {
+        GetComponent<AudioSource>().Play();
+    }
+
+    private void ShowStars()
+    {
+        var lives = FindObjectOfType<LivesHandler>();
+        int noLives = lives.GetTotalLives();
+        int maxLives = lives.GetMaximumLives();
+        int half = (maxLives - 1) / 2;
+        if (noLives >= maxLives)
+        {
+            EnableStars(0);
+        }
+        else if (noLives >= half)
+        {
+            EnableStars(1);
+        } else
+        {
+            EnableStars(2);
+        }
+    }
+
+    private void EnableStars(int index)
+    {
+        stars[index].SetActive(true);
+    }
 }

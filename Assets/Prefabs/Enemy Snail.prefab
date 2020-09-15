@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
-  speed: 1
+  speed: 1.5
   points: 30
 --- !u!114 &2323725811656276302
 MonoBehaviour:
