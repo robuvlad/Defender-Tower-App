@@ -43,7 +43,9 @@ public class NextLevel : MonoBehaviour
 
     private void PlayAudio()
     {
-        GetComponent<AudioSource>().Play();
+        var audio = GetComponent<AudioSource>();
+        audio.volume = PlayerPrefsController.GetSoundsPrefs();
+        audio.Play();
     }
 
     private void ShowStars()

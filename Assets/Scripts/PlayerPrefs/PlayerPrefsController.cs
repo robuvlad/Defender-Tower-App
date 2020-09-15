@@ -9,6 +9,7 @@ public class PlayerPrefsController : MonoBehaviour
     private const float MAX_VOLUME = 1.0f;
 
     private const string LEVEL_KEY = "Level";
+    private const string SOUNDS_KEY = "Sounds";
 
     public static void SetVolumePrefs(float volume)
     {
@@ -34,5 +35,18 @@ public class PlayerPrefsController : MonoBehaviour
     public static int GetLevelPrefs()
     {
         return PlayerPrefs.GetInt(LEVEL_KEY);
+    }
+
+    public static void SetSoundsPrefs(float volumeSounds)
+    {
+        if (volumeSounds >= MIN_VOLUME && volumeSounds <= MAX_VOLUME)
+        {
+            PlayerPrefs.SetFloat(SOUNDS_KEY, volumeSounds);
+        }
+    }
+
+    public static float GetSoundsPrefs()
+    {
+        return PlayerPrefs.GetFloat(SOUNDS_KEY);
     }
 }

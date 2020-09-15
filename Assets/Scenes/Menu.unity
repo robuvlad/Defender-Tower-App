@@ -7321,7 +7321,7 @@ GameObject:
   - component: {fileID: 1708839876}
   - component: {fileID: 1708839875}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Canvas Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7706,7 +7706,7 @@ GameObject:
   - component: {fileID: 1952936206}
   - component: {fileID: 1952936205}
   m_Layer: 0
-  m_Name: Level Loader
+  m_Name: Level Loader Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

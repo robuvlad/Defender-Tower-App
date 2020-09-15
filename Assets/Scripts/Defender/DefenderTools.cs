@@ -23,7 +23,6 @@ public class DefenderTools : MonoBehaviour
         {
             Sell();
         }
-        GetComponent<AudioSource>().Play();
     }
 
     private void Upgrade()
@@ -38,6 +37,7 @@ public class DefenderTools : MonoBehaviour
                 Defender upgradeDefenderPrefab = Instantiate(upgradeDefender, pos, Quaternion.identity) as Defender;
                 points.DecreasePoints(upgradeDefenderPrefab.GetPoints());
                 HideAllInstances();
+                PlayAudio();
             }
         }
     }
@@ -51,6 +51,7 @@ public class DefenderTools : MonoBehaviour
             points.IncreasePoints(sellPoints);
             Destroy(defender);
             HideAllInstances();
+            PlayAudio();
         }
     }
 
@@ -110,4 +111,10 @@ public class DefenderTools : MonoBehaviour
         }
     }
 
+    private void PlayAudio()
+    {
+        var audio = GetComponent<AudioSource>();
+        audio.volume = PlayerPrefsController.GetSoundsPrefs();
+        audio.Play();
+    }
 }

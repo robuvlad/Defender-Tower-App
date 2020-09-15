@@ -11,7 +11,6 @@ public class LevelLoader : MonoBehaviour
     private const string SETTINGS_SCENE = "Settings";
     private const string MENU_SCENE = "Menu";
     
-
     void Start()
     {
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
@@ -23,6 +22,9 @@ public class LevelLoader : MonoBehaviour
 
     private IEnumerator WaitAndContinue()
     {
+        var audio = GetComponent<AudioSource>();
+        audio.volume = PlayerPrefsController.GetSoundsPrefs();
+        audio.Play();
         yield return new WaitForSeconds(timeToWait);
         sceneIndex += 1;
         SceneManager.LoadScene(sceneIndex);
@@ -32,6 +34,7 @@ public class LevelLoader : MonoBehaviour
     {
         SceneManager.LoadScene(level);
         var audio = GetComponent<AudioSource>();
+        audio.volume = PlayerPrefsController.GetSoundsPrefs();
         audio.Play();
     }
 
@@ -44,4 +47,5 @@ public class LevelLoader : MonoBehaviour
     {
         SceneManager.LoadScene(MENU_SCENE);
     }
+
 }

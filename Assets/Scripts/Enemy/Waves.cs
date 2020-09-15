@@ -92,7 +92,14 @@ public class Waves : MonoBehaviour
         waveText.text = "Wave " + currentWaveIndex + "/" + waves.Count;
         if (currentWaveIndex <= 1)
             return;
-        GetComponent<AudioSource>().Play();
+        PlayAudio();
+    }
+
+    private void PlayAudio()
+    {
+        var audio = GetComponent<AudioSource>();
+        audio.volume = PlayerPrefsController.GetSoundsPrefs();
+        audio.Play();
     }
 
     public List<Wave> GetWaves()

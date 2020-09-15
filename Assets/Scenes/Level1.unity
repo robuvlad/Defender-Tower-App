@@ -3194,7 +3194,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 15c1e35e83f7e794e8a2bebee0ce817e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5a33031aed6c93b41983a9308dbe0687, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6257,7 +6257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d706ff3b3e7984aa33b5ce706fe978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalLives: 10
+  totalLives: 2
   livesText: {fileID: 586100264}
 --- !u!4 &1849048568
 Transform:

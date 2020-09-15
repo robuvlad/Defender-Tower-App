@@ -16,6 +16,7 @@ public class AttackingEnemies : MonoBehaviour
     void Start()
     {
         audioShoot = GetComponent<AudioSource>() as AudioSource;
+        audioShoot.volume = PlayerPrefsController.GetSoundsPrefs();
     }
 
     void Update()
