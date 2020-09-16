@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class NextLevel : MonoBehaviour
@@ -24,10 +25,16 @@ public class NextLevel : MonoBehaviour
     public void ShowPanel()
     {
         nextLevelPanel.SetActive(true);
-        var canvasGroup = nextLevelPanel.GetComponent<CanvasGroup>();
-        StartCoroutine(DoFade(canvasGroup, canvasGroup.alpha, 1));
+        ActivateFading();
         PlayAudio();
         ShowStars();
+        SetLevelPrefs();
+    }
+
+    private void ActivateFading()
+    {
+        var canvasGroup = nextLevelPanel.GetComponent<CanvasGroup>();
+        StartCoroutine(DoFade(canvasGroup, canvasGroup.alpha, 1));
     }
 
     private IEnumerator DoFade(CanvasGroup canvas, float start, float end)
@@ -67,8 +74,35 @@ public class NextLevel : MonoBehaviour
         }
     }
 
+    // index can be 0, 1 or 2
     private void EnableStars(int index)
     {
         stars[index].SetActive(true);
+        int currentLevel = GetCurrentLevel();
+        PlayerPrefsController.SetStarPrefs(currentLevel, index + 1);
+    }
+
+
+    // index = 0 <=> currentLevel = 1
+    private void SetLevelPrefs()
+    {
+        int indexLevel = PlayerPrefsController.GetLevelPrefs();
+        int max_level = PlayerPrefsController.GetMaxLevel();
+        if (max_level- indexLevel <= 1)             //checking if it is last / maximum level
+            return;
+        int currentLevel = GetCurrentLevel();       //checking last enabled level 
+        if (currentLevel - 1 != indexLevel)
+            return;
+        indexLevel += 1;
+        PlayerPrefsController.SetLevelPrefs(indexLevel);
+    }
+
+    private int GetCurrentLevel()
+    {
+        string sceneName = SceneManager.GetActiveScene().name;
+        string[] strings = sceneName.Split(' ');
+        string lastString = strings[strings.Length - 1];
+        int currentLevel = int.Parse(lastString);
+        return currentLevel;
     }
 }

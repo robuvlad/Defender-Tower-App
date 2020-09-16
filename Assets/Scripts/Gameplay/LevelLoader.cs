@@ -25,6 +25,9 @@ public class LevelLoader : MonoBehaviour
         var audio = GetComponent<AudioSource>();
         audio.volume = PlayerPrefsController.GetSoundsPrefs();
         audio.Play();
+        //PlayerPrefs.DeleteKey("Level");
+        //PlayerPrefs.DeleteKey("Star1");
+        //PlayerPrefs.DeleteKey("Star2");
         yield return new WaitForSeconds(timeToWait);
         sceneIndex += 1;
         SceneManager.LoadScene(sceneIndex);

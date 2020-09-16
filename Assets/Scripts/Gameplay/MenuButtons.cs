@@ -36,7 +36,11 @@ public class MenuButtons : MonoBehaviour
         button.GetComponent<Image>().color = disabledColorButton;
         foreach(Transform child in button.transform)
         {
-            child.GetComponent<Text>().color = disabledColorText;
+            var textComp = child.GetComponent<Text>();
+            if (textComp != null)
+            {
+                textComp.color = disabledColorText;
+            }
         }
     }
 

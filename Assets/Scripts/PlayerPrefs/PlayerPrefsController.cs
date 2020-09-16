@@ -4,12 +4,26 @@ using UnityEngine;
 
 public class PlayerPrefsController : MonoBehaviour
 {
+    // VOLUME
     private const string VOLUME_KEY = "Volume";
     private const float MIN_VOLUME = 0.0f;
     private const float MAX_VOLUME = 1.0f;
 
+    // LEVEL INDEX
     private const string LEVEL_KEY = "Level";
+    private const int MIN_LEVEL = 0;
+
+    // ALL SOUNDS except volume
     private const string SOUNDS_KEY = "Sounds";
+
+    // STARS
+    private const string STAR_KEY = "Star";
+    private const int MAX_PLACE_STAR = 3;
+    private const int MIN_PLACE_STAR = 1;
+
+
+    // MAX LEVEL
+    private const int MAX_LEVEL = 5;
 
     public static void SetVolumePrefs(float volume)
     {
@@ -26,7 +40,7 @@ public class PlayerPrefsController : MonoBehaviour
 
     public static void SetLevelPrefs(int level)
     {
-        if (level >= 0)
+        if (level >= MIN_LEVEL)
         {
             PlayerPrefs.SetInt(LEVEL_KEY, level);
         }
@@ -48,5 +62,29 @@ public class PlayerPrefsController : MonoBehaviour
     public static float GetSoundsPrefs()
     {
         return PlayerPrefs.GetFloat(SOUNDS_KEY);
+    }
+
+    public static void SetStarPrefs(int currentLevel, int place)
+    {
+        if (place >= MIN_PLACE_STAR && place <= MAX_PLACE_STAR && currentLevel <= MAX_LEVEL)
+        {
+            string starLevel = STAR_KEY + currentLevel.ToString();
+            int currentPlace = PlayerPrefs.GetInt(starLevel);
+            if (currentPlace == 0 || currentPlace > place)
+            {
+                PlayerPrefs.SetInt(starLevel, place);
+            }
+        }
+    }
+
+    public static int GetStarPrefs(int level)
+    {
+        string starLevel = STAR_KEY + level.ToString();
+        return PlayerPrefs.GetInt(starLevel);
+    }
+
+    public static int GetMaxLevel()
+    {
+        return MAX_LEVEL;
     }
 }
