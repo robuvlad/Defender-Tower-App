@@ -12,6 +12,7 @@ public class DefenderSelection : MonoBehaviour
 
     private float timeToUnlock = 1.0f;
     private const string IS_SELECTED_PLACE_ANIM_PARAM = "isSelected";
+    private bool isDefenderSelected = false;
 
     void Start()
     {
@@ -25,6 +26,22 @@ public class DefenderSelection : MonoBehaviour
     }
 
     private void HandleDefender()
+    {
+        if (isDefenderSelected == false)
+        {
+            SetAllDefenderSelections();
+            isDefenderSelected = true;
+            HandleSelectedDefender();
+        }
+        else
+        {
+            SetAllDefenderSelections();
+            HandleUnselectedDefender();
+            DisableFreePlaces();
+        }
+    }
+
+    private void HandleSelectedDefender()
     {
         var points = FindObjectOfType<PointsHandler>() as PointsHandler;
         if (points.GetTotalPoints() >= defender.GetPoints())
@@ -42,6 +59,44 @@ public class DefenderSelection : MonoBehaviour
             StartCoroutine(ShowNotEnoughPoints());
         }
     }
+
+    private void HandleUnselectedDefender()
+    {
+        var defenders = FindObjectsOfType<DefenderSelection>();
+        foreach (DefenderSelection def in defenders)
+        {
+            LockDefender(def);
+        }
+        PlaceDefender(null);
+    }
+
+    public void SetAllDefenderSelections()
+    {
+        var defenderSelections = FindObjectsOfType<DefenderSelection>();
+        foreach (DefenderSelection defenderSelection in defenderSelections)
+        {
+            defenderSelection.SetDefenderSelected(false);
+        }
+    }
+
+    private void SetDefenderSelected(bool isDefSel)
+    {
+        isDefenderSelected = isDefSel;
+    }
+
+    private void DisableFreePlaces()
+    {
+        var places = FindObjectsOfType<PositionDefenders>();
+        foreach (PositionDefenders place in places)
+        {
+            if (place.HasDefender() == false)
+            {
+                var animator = place.GetComponent<Animator>();
+                animator.SetBool(IS_SELECTED_PLACE_ANIM_PARAM, false);
+            }
+        }
+    }
+
 
     public void LockDefender(DefenderSelection def)
     {

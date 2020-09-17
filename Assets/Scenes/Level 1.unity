@@ -6467,7 +6467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d706ff3b3e7984aa33b5ce706fe978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalLives: 2
+  totalLives: 10
   livesText: {fileID: 586100264}
 --- !u!4 &1849048568
 Transform:

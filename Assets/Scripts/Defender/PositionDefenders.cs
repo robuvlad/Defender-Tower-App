@@ -39,6 +39,7 @@ public class PositionDefenders : MonoBehaviour
         foreach(DefenderSelection def in defenders)
         {
             def.LockDefender(def);
+            def.SetAllDefenderSelections();
         }
         PositionDefenders[] positions = FindObjectsOfType<PositionDefenders>();
         foreach(PositionDefenders pos in positions)
