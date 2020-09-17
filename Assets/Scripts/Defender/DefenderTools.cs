@@ -21,6 +21,7 @@ public class DefenderTools : MonoBehaviour
         }
         if (gameObject.tag == SELL_TAG)
         {
+            SetHasDefenderPlace();
             Sell();
         }
     }
@@ -33,13 +34,22 @@ public class DefenderTools : MonoBehaviour
             var points = FindObjectOfType<PointsHandler>();
             if (upgradeDefender != null && points.GetTotalPoints() >= upgradeDefender.GetPoints())
             {
+                Transform parentPlace = defender.transform.parent;
                 Destroy(defender);
                 Defender upgradeDefenderPrefab = Instantiate(upgradeDefender, pos, Quaternion.identity) as Defender;
+                upgradeDefenderPrefab.transform.SetParent(parentPlace.transform);
                 points.DecreasePoints(upgradeDefenderPrefab.GetPoints());
                 HideAllInstances();
                 PlayAudio();
             }
         }
+    }
+
+    private void SetHasDefenderPlace()
+    {
+        Transform parentPlace = defender.transform.parent;
+        var place = parentPlace.gameObject.GetComponent<PositionDefenders>();
+        place.SetHasDefender(false);
     }
 
     private void Sell()

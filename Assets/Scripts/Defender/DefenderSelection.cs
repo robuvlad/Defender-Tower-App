@@ -11,6 +11,7 @@ public class DefenderSelection : MonoBehaviour
     [SerializeField] GameObject panel = null;
 
     private float timeToUnlock = 1.0f;
+    private const string IS_SELECTED_PLACE_ANIM_PARAM = "isSelected";
 
     void Start()
     {
@@ -18,6 +19,12 @@ public class DefenderSelection : MonoBehaviour
     }
 
     private void OnMouseDown()
+    {
+        ShowFreePlaces();
+        HandleDefender();
+    }
+
+    private void HandleDefender()
     {
         var points = FindObjectOfType<PointsHandler>() as PointsHandler;
         if (points.GetTotalPoints() >= defender.GetPoints())
@@ -60,5 +67,18 @@ public class DefenderSelection : MonoBehaviour
         panel.SetActive(true);
         yield return new WaitForSeconds(timeToUnlock);
         panel.SetActive(false);
+    }
+
+    private void ShowFreePlaces()
+    {
+        var places = FindObjectsOfType<PositionDefenders>();
+        foreach(PositionDefenders place in places)
+        {
+            if (place.HasDefender() == false)
+            {
+                var animator = place.GetComponent<Animator>();
+                animator.SetBool(IS_SELECTED_PLACE_ANIM_PARAM, true);
+            }
+        }
     }
 }
