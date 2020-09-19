@@ -102,6 +102,7 @@ public class PlayerPrefsController : MonoBehaviour
         PlayerPrefs.SetInt(key, isBought);
     }
 
+    // returns 0 or 1
     public static int GetBoughtDefenderPrefs(int defenderIndex)
     {
         string key = BOUGHT_DEF_KEY + defenderIndex;

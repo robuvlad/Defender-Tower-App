@@ -11,6 +11,7 @@ public class LevelLoader : MonoBehaviour
     private const string SETTINGS_SCENE = "Settings";
     private const string MENU_SCENE = "Menu";
     private const string CREDITS_SCENE = "Credits";
+    private const string STORE_SCENE = "Store";
     
     void Start()
     {
@@ -55,6 +56,11 @@ public class LevelLoader : MonoBehaviour
     public void LoadCredits()
     {
         SceneManager.LoadScene(CREDITS_SCENE);
+    }
+
+    public void LoadStore()
+    {
+        SceneManager.LoadScene(STORE_SCENE);
     }
 
 }

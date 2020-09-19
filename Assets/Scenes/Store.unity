@@ -1181,7 +1181,7 @@ Transform:
   - {fileID: 495281243}
   - {fileID: 36369224}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &250131778
 GameObject:
@@ -1276,7 +1276,7 @@ GameObject:
   - component: {fileID: 288733270}
   - component: {fileID: 288733273}
   m_Layer: 5
-  m_Name: Defender 4 Button
+  m_Name: Defender 3 Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1394,6 +1394,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   priceText: {fileID: 1462327612}
+  soldText: {fileID: 1434967809}
+  buyButton: {fileID: 584105731}
 --- !u!1 &354652975
 GameObject:
   m_ObjectHideFlags: 0
@@ -1408,7 +1410,7 @@ GameObject:
   - component: {fileID: 354652977}
   - component: {fileID: 354652980}
   m_Layer: 5
-  m_Name: Defender 2 Button
+  m_Name: Defender 1 Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1526,6 +1528,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   priceText: {fileID: 1462327612}
+  soldText: {fileID: 1434967809}
+  buyButton: {fileID: 584105731}
 --- !u!1 &370577825
 GameObject:
   m_ObjectHideFlags: 0
@@ -4638,7 +4642,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 584105734}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1522649882}
+        m_MethodName: BuyDefender
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &584105734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4863,7 +4878,7 @@ GameObject:
   - component: {fileID: 683435287}
   - component: {fileID: 683435290}
   m_Layer: 5
-  m_Name: Defender 6 Button
+  m_Name: Defender 5 Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4981,6 +4996,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   priceText: {fileID: 1462327612}
+  soldText: {fileID: 1434967809}
+  buyButton: {fileID: 584105731}
 --- !u!1 &756370440
 GameObject:
   m_ObjectHideFlags: 0
@@ -5639,7 +5656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d00f14ab34312c4198db578ab467e83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 500
+  score: 0
 --- !u!1 &1522632813
 GameObject:
   m_ObjectHideFlags: 0
@@ -5654,7 +5671,7 @@ GameObject:
   - component: {fileID: 1522632815}
   - component: {fileID: 1522632818}
   m_Layer: 5
-  m_Name: Defender 3 Button
+  m_Name: Defender 2 Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5772,6 +5789,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   priceText: {fileID: 1462327612}
+  soldText: {fileID: 1434967809}
+  buyButton: {fileID: 584105731}
+--- !u!1 &1522649881
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1522649883}
+  - component: {fileID: 1522649882}
+  m_Layer: 0
+  m_Name: Selected Store Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1522649882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522649881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d54938576baeba2459c2b19647a6a05c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1522649883
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522649881}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1657706837
 GameObject:
   m_ObjectHideFlags: 0
@@ -5786,7 +5848,7 @@ GameObject:
   - component: {fileID: 1657706839}
   - component: {fileID: 1657706842}
   m_Layer: 5
-  m_Name: Defender 5 Button
+  m_Name: Defender 4 Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5904,6 +5966,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   priceText: {fileID: 1462327612}
+  soldText: {fileID: 1434967809}
+  buyButton: {fileID: 584105731}
 --- !u!1 &1708839874
 GameObject:
   m_ObjectHideFlags: 0
@@ -5999,7 +6063,7 @@ RectTransform:
   - {fileID: 250131779}
   - {fileID: 1316286537}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6107,7 +6171,7 @@ GameObject:
   - component: {fileID: 1821788175}
   - component: {fileID: 1821788178}
   m_Layer: 5
-  m_Name: Defender 1 Button
+  m_Name: Defender 0 Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6189,7 +6253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6225,6 +6289,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   priceText: {fileID: 1462327612}
+  soldText: {fileID: 1434967809}
+  buyButton: {fileID: 584105731}
 --- !u!114 &1952936205 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5609021050404721457, guid: dec08d3c2eabda54f9b2f50349b6d9d4,

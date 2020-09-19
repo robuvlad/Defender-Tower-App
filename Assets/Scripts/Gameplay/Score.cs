@@ -9,12 +9,9 @@ public class Score : MonoBehaviour
     [SerializeField] Text scoreText = null;
     [SerializeField] Text priceText = null;
 
-    private int score;
-
     void Start()
     {
-        score = PlayerPrefsController.GetScorePrefs();
-        scoreText.text = score.ToString();
+        ShowScore();
         ShowImages();
     }
 
@@ -35,26 +32,9 @@ public class Score : MonoBehaviour
         }
     }
 
-    public void IncreaseScore(int number)
+    public void ShowScore()
     {
-        score += number;
-    }
-
-    public void DecreaseScore(int number)
-    {
-        if (score >= number)
-        {
-            score -= number;
-        }
-    }
-
-    public int GetScore()
-    {
-        return score;
-    }
-
-    public void SetScore(int s)
-    {
-        score = s;
+        int score = PlayerPrefsController.GetScorePrefs();
+        scoreText.text = score.ToString();
     }
 }
