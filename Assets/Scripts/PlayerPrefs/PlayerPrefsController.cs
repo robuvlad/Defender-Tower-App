@@ -21,6 +21,11 @@ public class PlayerPrefsController : MonoBehaviour
     private const int MAX_PLACE_STAR = 3;
     private const int MIN_PLACE_STAR = 1;
 
+    // BOUGHT DEFENDERS
+    private const string BOUGHT_DEF_KEY = "Bought_Defender";
+
+    // SCORE
+    private const string SCORE_KEY = "Score";
 
     // MAX LEVEL
     private const int MAX_LEVEL = 5;
@@ -86,5 +91,30 @@ public class PlayerPrefsController : MonoBehaviour
     public static int GetMaxLevel()
     {
         return MAX_LEVEL;
+    }
+
+    // isBought must be 0 or 1
+    public static void SetBoughDefenderPrefs(int defenderIndex, int isBought)
+    {
+        if (isBought != 0 && isBought != 1)
+            return;
+        string key = BOUGHT_DEF_KEY + defenderIndex.ToString();
+        PlayerPrefs.SetInt(key, isBought);
+    }
+
+    public static int GetBoughtDefenderPrefs(int defenderIndex)
+    {
+        string key = BOUGHT_DEF_KEY + defenderIndex;
+        return PlayerPrefs.GetInt(key);
+    }
+
+    public static void SetScorePrefs(int score)
+    {
+        PlayerPrefs.SetInt(SCORE_KEY, score);
+    }
+
+    public static int GetScorePrefs()
+    {
+        return PlayerPrefs.GetInt(SCORE_KEY);
     }
 }
