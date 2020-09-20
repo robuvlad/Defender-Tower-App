@@ -13,6 +13,9 @@ public class NextLevel : MonoBehaviour
     [Header("Types of stars")]
     [SerializeField] List<GameObject> stars = null;
 
+    [Header("Score")]
+    [SerializeField] Text scoreText = null;
+
     void Start()
     {
         nextLevelPanel.SetActive(false);
@@ -80,6 +83,7 @@ public class NextLevel : MonoBehaviour
         stars[index].SetActive(true);
         int currentLevel = GetCurrentLevel();
         PlayerPrefsController.SetStarPrefs(currentLevel, index + 1);
+        ShowScoreText(index);
     }
 
 
@@ -104,5 +108,22 @@ public class NextLevel : MonoBehaviour
         string lastString = strings[strings.Length - 1];
         int currentLevel = int.Parse(lastString);
         return currentLevel;
+    }
+
+    private void ShowScoreText(int index)
+    {
+        int levelScore = FindObjectOfType<LevelScore>().GetScoreLevel();
+        if (index == 1)
+        {
+            levelScore /= 2;
+        }
+        else if (index == 2)
+        {
+            levelScore /= 3;
+        }
+        scoreText.text = levelScore.ToString();
+        int currentScore = PlayerPrefsController.GetScorePrefs();
+        currentScore += levelScore;
+        PlayerPrefsController.SetScorePrefs(currentScore);
     }
 }

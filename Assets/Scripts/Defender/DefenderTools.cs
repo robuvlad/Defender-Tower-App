@@ -47,9 +47,12 @@ public class DefenderTools : MonoBehaviour
 
     private void SetHasDefenderPlace()
     {
-        Transform parentPlace = defender.transform.parent;
-        var place = parentPlace.gameObject.GetComponent<PositionDefenders>();
-        place.SetHasDefender(false);
+        if (defender != null)
+        {
+            Transform parentPlace = defender.transform.parent;
+            var place = parentPlace.gameObject.GetComponent<PositionDefenders>();
+            place.SetHasDefender(false);
+        }
     }
 
     private void Sell()

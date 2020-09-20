@@ -30,6 +30,7 @@ public class LevelLoader : MonoBehaviour
         //PlayerPrefs.DeleteKey("Level");
         //PlayerPrefs.DeleteKey("Star1");
         //PlayerPrefs.DeleteKey("Star2");
+        //PlayerPrefs.DeleteKey("Star3");
         yield return new WaitForSeconds(timeToWait);
         sceneIndex += 1;
         SceneManager.LoadScene(sceneIndex);
