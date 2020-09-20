@@ -10,19 +10,41 @@ public class DefenderSelection : MonoBehaviour
     [Header("Not enough points panel")]
     [SerializeField] GameObject panel = null;
 
+    [Header("Sprite Locked")]
+    [SerializeField] GameObject locker = null;
+
     private float timeToUnlock = 1.0f;
     private const string IS_SELECTED_PLACE_ANIM_PARAM = "isSelected";
     private bool isDefenderSelected = false;
 
     void Start()
     {
+        locker.SetActive(false);
         panel.SetActive(false);
+        if (CheckDefenderAvailability() == false)
+        {
+            locker.SetActive(true);
+        }
     }
 
     private void OnMouseDown()
     {
-        ShowFreePlaces();
-        HandleDefender();
+        if (CheckDefenderAvailability() == true)
+        {
+            ShowFreePlaces();
+            HandleDefender();
+        }
+    }
+
+    private bool CheckDefenderAvailability()
+    {
+        int index = int.Parse(gameObject.name.Split(' ')[1]);
+        int nr = PlayerPrefsController.GetBoughtDefenderPrefs(index);
+        if (nr == 0)
+            return false;
+        else if (nr == 1)
+            return true;
+        return false;
     }
 
     private void HandleDefender()
