@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 621932770525548018}
   - component: {fileID: 5025204222285712643}
   m_Layer: 0
-  m_Name: Defender 2
+  m_Name: Defender Heavy 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 15
-  m_Sprite: {fileID: 21300000, guid: 46ba003972983764fb385f3fd87561cd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1b603e89e9816094b9836eb00ebf725e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -323,14 +323,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 4
   points: 150
-  upgradeArrow: {fileID: 4286563504538271423, guid: 7e77ab2ed852f0e489c757a1cefc2f5e,
-    type: 3}
-  upgradeDefender: {fileID: 8616479955595290161, guid: abe5e69c9dda18346829ecedcff5230a,
-    type: 3}
-  textUpgrade: {fileID: 3476696088411191793, guid: 6ff497fa7ac3efc418381a33f8173517,
-    type: 3}
-  textSell: {fileID: 3476696088411191793, guid: 6ff497fa7ac3efc418381a33f8173517,
-    type: 3}
+  upgradeDefender: {fileID: 0}
+  textUpgrade: {fileID: 0}
+  textSell: {fileID: 0}
   sellPoints: 100
   R: 100
   G: 100
