@@ -15,7 +15,7 @@ public class DefenderTools : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (gameObject.tag == ARROW_TAG)
+        if (gameObject.tag == ARROW_TAG && upgradeDefender != null)
         {
             Upgrade();
         }
@@ -97,7 +97,7 @@ public class DefenderTools : MonoBehaviour
 
     private void ShowTexts(GameObject textUpgrade, GameObject textSell)
     {
-        if (defender != null)
+        if (defender != null && textUpgrade != null && textSell != null)
         {
             if (gameObject.tag == ARROW_TAG)
             {

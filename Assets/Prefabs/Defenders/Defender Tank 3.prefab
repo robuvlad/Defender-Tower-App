@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 3269206906566329259}
   - component: {fileID: 8616479955595290161}
   m_Layer: 0
-  m_Name: Defender Tank 1
+  m_Name: Defender Tank 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,7 +105,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 15
-  m_Sprite: {fileID: 21300000, guid: 4021b334ddce7404ebef3bde89635df0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 723d3aeb0d146b046885875600d8bd98, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -363,12 +363,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 5
   points: 100
-  upgradeDefender: {fileID: 8616479955595290161, guid: c68ac6bf155bbc74d9f5fb72c2fdac7d,
-    type: 3}
-  textUpgrade: {fileID: 3476696088411191793, guid: 6ff497fa7ac3efc418381a33f8173517,
-    type: 3}
-  textSell: {fileID: 3476696088411191793, guid: 6ff497fa7ac3efc418381a33f8173517,
-    type: 3}
+  upgradeDefender: {fileID: 0}
+  textUpgrade: {fileID: 0}
+  textSell: {fileID: 0}
   sellPoints: 80
   R: 235
   G: 0
