@@ -3265,7 +3265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de7f6232dea9c254eb9f1923cb49845a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 725710582885936363, guid: 169339e52d848924f9a26dd61616f27a, type: 3}
+  enemy: {fileID: 8233662287784016791, guid: 1fc21738940c8e341b746f295c8e5adf, type: 3}
   numberOfEnemies: 4
   timeBetweenEnemies: 3
 --- !u!4 &931273559
