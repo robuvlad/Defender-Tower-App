@@ -36,7 +36,8 @@ public class Waves : MonoBehaviour
 
     private IEnumerator InstantiateNewWave()
     {
-        while(noOfWaves > 0)
+        yield return new WaitForSeconds(timeBetweenWaves);
+        while (noOfWaves > 0)
         {
             SetWaveTextUI(waves.Count - noOfWaves + 1);
             currentWave = waves[waves.Count - noOfWaves];

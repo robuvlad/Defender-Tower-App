@@ -31,14 +31,18 @@ public class Gametimer : MonoBehaviour
 
     public void UpdateSliderValue(float waveTime)
     {
-        slider.value = waveTime / totalTime;
-        if (slider.value >= MAX_SLIDER_VALUE)
+        if (slider != null)
         {
-            animator.SetBool(IS_MAX_STRING, true);
+            slider.value = waveTime / totalTime;
+            if (slider.value >= MAX_SLIDER_VALUE)
+            {
+                animator.SetBool(IS_MAX_STRING, true);
+            }
+            else
+            {
+                animator.SetBool(IS_MAX_STRING, false);
+            }
         }
-        else
-        {
-            animator.SetBool(IS_MAX_STRING, false);
-        }
+        
     }
 }
