@@ -8,7 +8,7 @@ public class WritingEffect : MonoBehaviour
     [SerializeField] Text soundsUI;
     [SerializeField] float waitTime = 0.1f;
 
-    private const string stringText = "Founder: Robu Vlad \n Sounds from: Zapslat.com \n";
+    private const string stringText = "Founder: Robu Vlad \n Sounds from: Zapslat.com \n Zombies from: rileygombart \n";
 
     void Start()
     {

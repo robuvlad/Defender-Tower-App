@@ -424,7 +424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 8437007813066136178, guid: 436f84dcf4162344baa0e174cd0900b9, type: 3}
   numberOfEnemies: 4
-  timeBetweenEnemies: 2
+  timeBetweenEnemies: 5
 --- !u!1 &107763123
 GameObject:
   m_ObjectHideFlags: 0
