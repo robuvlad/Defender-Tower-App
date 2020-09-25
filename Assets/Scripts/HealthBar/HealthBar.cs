@@ -14,6 +14,7 @@ public class HealthBar : MonoBehaviour
     private byte blue = 0;
 
     private float maxHealth;
+    private bool isDestroyed = false;
 
     void Start()
     {
@@ -26,6 +27,11 @@ public class HealthBar : MonoBehaviour
         float health = enemy.GetHealth();
         ShowHealthBar(health);
         ChangeColorBasedOnHealth(health);
+        if (health <= 0.0f && isDestroyed == false)
+        {
+            Destroy(gameObject);
+            isDestroyed = true;
+        }
     }
 
     private void ShowHealthBar(float health)
