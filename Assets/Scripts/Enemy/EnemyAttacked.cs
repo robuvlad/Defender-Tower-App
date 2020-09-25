@@ -38,6 +38,8 @@ public class EnemyAttacked : MonoBehaviour
                 animator.SetBool(IS_DYING_ANIMATOR_PARAM, true);
                 points.IncreasePoints(enemy.GetPoints());
                 ShowPoints();
+                var collider = GetComponent<PolygonCollider2D>();
+                Destroy(collider);
                 Destroy(this.gameObject, timeToDie);
             }
             Destroy(other.gameObject);
