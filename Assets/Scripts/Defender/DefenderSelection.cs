@@ -31,7 +31,6 @@ public class DefenderSelection : MonoBehaviour
     {
         if (CheckDefenderAvailability() == true)
         {
-            ShowFreePlaces();
             HandleDefender();
         }
     }
@@ -68,6 +67,7 @@ public class DefenderSelection : MonoBehaviour
         var points = FindObjectOfType<PointsHandler>() as PointsHandler;
         if (points.GetTotalPoints() >= defender.GetPoints())
         {
+            ShowFreePlaces();
             var defenders = FindObjectsOfType<DefenderSelection>();
             foreach (DefenderSelection def in defenders)
             {
