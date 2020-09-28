@@ -27,13 +27,26 @@ public class LevelLoader : MonoBehaviour
         var audio = GetComponent<AudioSource>();
         audio.volume = PlayerPrefsController.GetSoundsPrefs();
         audio.Play();
-        //PlayerPrefs.DeleteKey("Level");
-        //PlayerPrefs.DeleteKey("Star1");
-        //PlayerPrefs.DeleteKey("Star2");
-        //PlayerPrefs.DeleteKey("Star3");
         yield return new WaitForSeconds(timeToWait);
         sceneIndex += 1;
         SceneManager.LoadScene(sceneIndex);
+
+        PlayerPrefsController.SetBoughDefenderPrefs(0, 1);
+        //PlayerPrefsController.SetBoughDefenderPrefs(1, 1);
+        /*
+        PlayerPrefsController.SetSoundsPrefs(0.5f);
+        PlayerPrefsController.SetVolumePrefs(0.4f);
+        PlayerPrefsController.SetScorePrefs(0);
+        PlayerPrefs.DeleteKey("Bought_Defender");
+           for(int i=1; i < 6; i++)
+               PlayerPrefs.DeleteKey("Bought_Defender" + i.ToString());
+        PlayerPrefs.DeleteKey("Level");
+        PlayerPrefs.DeleteKey("Star1");
+        PlayerPrefs.DeleteKey("Star2");
+        PlayerPrefs.DeleteKey("Star3");
+        PlayerPrefs.DeleteKey("Star4");
+        PlayerPrefs.DeleteKey("Star5");
+        */
     }
 
     public void PlayLevel(int level)

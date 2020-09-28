@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f03526edc89348a42a42c9ea248b257d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 7865002470778560375, guid: 217fdff050fca0a4e93cb73f91351da7, type: 3}
+  weapon: {fileID: 7865002470778560375, guid: 2072f69274b65514887a17bf3332aa92, type: 3}
   spawnProjectile: {fileID: 621932770782300298}
   timer: 1.5
 --- !u!114 &5025204222285712643
@@ -321,15 +321,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44a1b8a862b34bf4ebfb7c921958bc8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 4
-  points: 150
+  radius: 3.5
+  points: 120
   upgradeDefender: {fileID: 5025204222285712643, guid: b9ba124ae60fb034e911a3ef2abf8b45,
     type: 3}
   textUpgrade: {fileID: 3476696088411191793, guid: 6ff497fa7ac3efc418381a33f8173517,
     type: 3}
   textSell: {fileID: 3476696088411191793, guid: 6ff497fa7ac3efc418381a33f8173517,
     type: 3}
-  sellPoints: 100
+  sellPoints: 75
   R: 100
   G: 100
   B: 100

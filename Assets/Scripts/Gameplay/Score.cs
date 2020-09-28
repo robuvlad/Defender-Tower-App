@@ -17,7 +17,6 @@ public class Score : MonoBehaviour
 
     private void ShowImages()
     {
-        PlayerPrefsController.SetBoughDefenderPrefs(0, 1);
         for(int i = 0; i < images.Count; i++)
         {
             int value = PlayerPrefsController.GetBoughtDefenderPrefs(i);

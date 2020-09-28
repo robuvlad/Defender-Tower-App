@@ -61,6 +61,11 @@ public class Wave : MonoBehaviour
                 var enemyComponent = enemies[i].GetComponent<Enemy>() as Enemy;
                 float distanceDelta = Time.deltaTime * enemyComponent.GetSpeed();
                 enemies[i].transform.position = Vector3.MoveTowards(enemies[i].transform.position, currentPoints[i].position, distanceDelta);
+                
+                var targetDirection = currentPoints[i].position - enemies[i].transform.position;
+                float angle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg;
+                Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+                enemies[i].transform.rotation = rotation;
             }
         }
     }

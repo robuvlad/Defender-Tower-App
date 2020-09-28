@@ -13,14 +13,6 @@ public class StoreButton : MonoBehaviour
 
     void Start()
     {
-        /*
-        PlayerPrefsController.SetScorePrefs(10000);
-        
-        PlayerPrefs.DeleteKey("Bought_Defender");
-        for(int i=1; i < 6; i++)
-            PlayerPrefs.DeleteKey("Bought_Defender" + i.ToString());
-        */
-
         buyButton.SetActive(false);
         Button button = GetComponent<Button>();
         button.onClick.AddListener(OnPress);
