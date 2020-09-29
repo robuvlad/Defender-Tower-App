@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ship4
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 21300000, guid: d0ca8582f571e26489905e3b91d40548, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.67058825}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
   m_Transform:
     e00: 1
     e01: 0
