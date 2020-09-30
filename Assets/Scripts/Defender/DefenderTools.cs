@@ -7,11 +7,21 @@ public class DefenderTools : MonoBehaviour
     [Header("Upper Points Text")]
     [SerializeField] GameObject text = null;
 
+    [Header("Not Enough Points Text")]
+    [SerializeField] GameObject notEnoughText = null;
+
+    private float notEnoughTime = 1.5f;
+
     private GameObject defender = null;
     private Defender upgradeDefender = null;
 
     private const string ARROW_TAG = "arrow";
     private const string SELL_TAG = "sell";
+
+    void Start()
+    {
+        notEnoughText.SetActive(false);
+    }
 
     private void OnMouseDown()
     {
@@ -42,7 +52,18 @@ public class DefenderTools : MonoBehaviour
                 HideAllInstances();
                 PlayAudio();
             }
+            else if (points.GetTotalPoints() < upgradeDefender.GetPoints())
+            {
+                StartCoroutine(ShowNotEnoughText());
+            }
         }
+    }
+
+    private IEnumerator ShowNotEnoughText()
+    {
+        notEnoughText.SetActive(true);
+        yield return new WaitForSeconds(notEnoughTime);
+        notEnoughText.SetActive(false);
     }
 
     private void SetHasDefenderPlace()

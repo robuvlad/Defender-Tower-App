@@ -6400,6 +6400,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Defender Tools
       objectReference: {fileID: 0}
+    - target: {fileID: 3856013178806997966, guid: 34f95ba6bbc21b14788243b6969700e6,
+        type: 3}
+      propertyPath: notEnoughText
+      value: 
+      objectReference: {fileID: 607711979}
+    - target: {fileID: 8737183940979046738, guid: 34f95ba6bbc21b14788243b6969700e6,
+        type: 3}
+      propertyPath: notEnoughText
+      value: 
+      objectReference: {fileID: 607711979}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34f95ba6bbc21b14788243b6969700e6, type: 3}
 --- !u!1 &1628758232

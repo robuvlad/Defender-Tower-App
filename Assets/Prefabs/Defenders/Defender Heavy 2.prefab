@@ -308,7 +308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 7865002470778560375, guid: 2072f69274b65514887a17bf3332aa92, type: 3}
   spawnProjectile: {fileID: 621932770782300298}
-  timer: 1.5
+  timer: 1.25
 --- !u!114 &5025204222285712643
 MonoBehaviour:
   m_ObjectHideFlags: 0
