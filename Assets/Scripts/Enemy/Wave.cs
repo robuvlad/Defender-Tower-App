@@ -9,17 +9,15 @@ public class Wave : MonoBehaviour
     [SerializeField] int numberOfEnemies = 0;
     [SerializeField] float timeBetweenEnemies = 0.0f;
 
-    private List<Enemy> enemies = null;
-    private Transform[] currentPoints = null;
-    private int[] indexPoints = null;
-    private List<Transform> waypoints = null;
+    protected List<Enemy> enemies = null;
+    protected Transform[] currentPoints = null;
+    protected int[] indexPoints = null;
+    protected List<Transform> waypoints = null;
 
     private bool hasSpawnedFinished = false;
 
     void Start()
     {
-        waypoints = FindObjectOfType<Waypoints>().GetWaypoints();
-        enemies = new List<Enemy>();
         InitializePoints();
     }
 
@@ -31,7 +29,7 @@ public class Wave : MonoBehaviour
 
     public IEnumerator InstantiateRandomEnemies()
     {
-        while (numberOfEnemies > 0)
+        while (numberOfEnemies > 0 && enemy != null)
         {
             var newEnemy = Instantiate(enemy, waypoints[0].transform.position, Quaternion.identity);
             enemies.Add(newEnemy);
@@ -43,6 +41,8 @@ public class Wave : MonoBehaviour
 
     public void InitializePoints()
     {
+        waypoints = FindObjectOfType<Waypoints>().GetWaypoints();
+        enemies = new List<Enemy>();
         currentPoints = new Transform[numberOfEnemies];
         indexPoints = new int[numberOfEnemies];
         for (int i = 0; i < numberOfEnemies; i++)
@@ -52,7 +52,7 @@ public class Wave : MonoBehaviour
         }
     }
 
-    private void MoveTowardsNextPoints()
+    public void MoveTowardsNextPoints()
     {
         for (int i = 0; i < enemies.Count; i++)
         {
@@ -70,7 +70,7 @@ public class Wave : MonoBehaviour
         }
     }
 
-    private void UpdateCurrentPoints()
+    public void UpdateCurrentPoints()
     {
         for (int i = 0; i < enemies.Count; i++)
         {
@@ -90,7 +90,7 @@ public class Wave : MonoBehaviour
         return enemies;
     }
     
-    public float GetNoOfEnemies()
+    public int GetNoOfEnemies()
     {
         return numberOfEnemies;
     }
@@ -103,5 +103,10 @@ public class Wave : MonoBehaviour
     public bool HasSpawnedFinished()
     {
         return hasSpawnedFinished;
+    }
+
+    public Enemy GetEnemy()
+    {
+        return enemy;
     }
 }
