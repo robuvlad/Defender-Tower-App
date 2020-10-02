@@ -322,14 +322,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3.5
-  points: 120
+  points: 110
   upgradeDefender: {fileID: 5025204222285712643, guid: b9ba124ae60fb034e911a3ef2abf8b45,
     type: 3}
   textUpgrade: {fileID: 3476696088411191793, guid: 6ff497fa7ac3efc418381a33f8173517,
     type: 3}
   textSell: {fileID: 3476696088411191793, guid: 6ff497fa7ac3efc418381a33f8173517,
     type: 3}
-  sellPoints: 75
+  sellPoints: 65
   R: 100
   G: 100
   B: 100

@@ -322,11 +322,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 4.5
-  points: 140
+  points: 120
   upgradeDefender: {fileID: 0}
   textUpgrade: {fileID: 0}
   textSell: {fileID: 0}
-  sellPoints: 85
+  sellPoints: 75
   R: 100
   G: 100
   B: 100
