@@ -133,7 +133,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    oldSize: {x: 1.3333334, y: 1.3333334}
     newSize: {x: 10.24, y: 10.24}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -348,7 +348,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 7865002470778560375, guid: 717d7d8a16c3fd449a7199e781f550b5, type: 3}
   spawnProjectile: {fileID: 1874449555640258757}
-  timer: 0.5
+  timer: 0.35
+  timeBetweenMoreProj: 1.5
+  shooterCounterProjectiles: 5
 --- !u!114 &8616479955595290161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,14 +364,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
-  points: 75
+  points: 70
   upgradeDefender: {fileID: 8616479955595290161, guid: b6dc2bc260c9cd34ea23cb6c48b7d83d,
     type: 3}
   textUpgrade: {fileID: 3476696088411191793, guid: 6ff497fa7ac3efc418381a33f8173517,
     type: 3}
   textSell: {fileID: 3476696088411191793, guid: 6ff497fa7ac3efc418381a33f8173517,
     type: 3}
-  sellPoints: 80
+  sellPoints: 45
   R: 0
   G: 200
   B: 0

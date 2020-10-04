@@ -9,9 +9,15 @@ public class AttackingEnemies : MonoBehaviour
     [SerializeField] GameObject spawnProjectile = null;
     [SerializeField] float timer = 0.0f;
 
+    [Header("Timer between a number of projectiles")]
+    [SerializeField] float timeBetweenMoreProj = 0.0f;
+    [SerializeField] int shooterCounterProjectiles = 3;
+
     private float localTime = 0.0f;
     private string WAVE_TAG = "wave";
     private AudioSource audioShoot = null;
+
+    private int shooterCounter = 0;
 
     void Start()
     {
@@ -90,7 +96,14 @@ public class AttackingEnemies : MonoBehaviour
             Vector2 relativePoint = transform.right * projectileSpeed;
             projectile.GetComponent<Rigidbody2D>().velocity = relativePoint;
             localTime = timer;
+            shooterCounter += 1;
+            if (shooterCounter == shooterCounterProjectiles)
+            {
+                localTime = timer + timeBetweenMoreProj;
+                shooterCounter -= shooterCounter;
+            }
         }
+
     }
 
     private void PlayAudio()
