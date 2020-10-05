@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3192486324597010163}
   - component: {fileID: 3762460116759884049}
   - component: {fileID: 8647176842822830659}
+  - component: {fileID: 5136354660132828118}
   m_Layer: 0
   m_Name: projectile4
   m_TagString: projectile
@@ -169,3 +170,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 10
   projectileDamage: 20
+--- !u!95 &5136354660132828118
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7865002470778560375}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a2a673967f6344c47b21711e986f4c4c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

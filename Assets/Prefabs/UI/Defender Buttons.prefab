@@ -695,7 +695,7 @@ Transform:
   m_GameObject: {fileID: 6109698105239829198}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.666, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9141773965914425373}
   - {fileID: 602390524717076449}
@@ -768,7 +768,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    oldSize: {x: 1.3333334, y: 1.3333334}
     newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -943,9 +943,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7041802709215005747}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1011155671472938165}
   m_RootOrder: 1
@@ -1274,12 +1274,12 @@ PrefabInstance:
     - target: {fileID: 7054819270680829317, guid: 6ff497fa7ac3efc418381a33f8173517,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.54
+      value: 0.37800038
       objectReference: {fileID: 0}
     - target: {fileID: 7054819270680829317, guid: 6ff497fa7ac3efc418381a33f8173517,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.919
+      value: 0.64330006
       objectReference: {fileID: 0}
     - target: {fileID: 7054819270680829317, guid: 6ff497fa7ac3efc418381a33f8173517,
         type: 3}
@@ -1329,17 +1329,17 @@ PrefabInstance:
     - target: {fileID: 7054819270680829317, guid: 6ff497fa7ac3efc418381a33f8173517,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.6666665
+      value: 1.1666666
       objectReference: {fileID: 0}
     - target: {fileID: 7054819270680829317, guid: 6ff497fa7ac3efc418381a33f8173517,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.6666665
+      value: 1.1666666
       objectReference: {fileID: 0}
     - target: {fileID: 7054819270680829317, guid: 6ff497fa7ac3efc418381a33f8173517,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.6666665
+      value: 1.1666666
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ff497fa7ac3efc418381a33f8173517, type: 3}
