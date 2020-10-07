@@ -2962,7 +2962,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - {fileID: 1390413239}
+  - {fileID: 93194469}
   - {fileID: 931273558}
   - {fileID: 706411151}
   - {fileID: 737545488}
@@ -2979,6 +2979,7 @@ MonoBehaviour:
   - {fileID: 670909910}
   - {fileID: 515840018}
   - {fileID: 773159393}
+  - {fileID: 1390413239}
   timeBetweenWaves: 2
   waveText: {fileID: 2094124149}
 --- !u!4 &487200679
