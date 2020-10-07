@@ -348,7 +348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 1271223804548479661, guid: 0ba4073298299154b98e835bac5ddc2b, type: 3}
   spawnProjectile: {fileID: 1874449555640258757}
-  timer: 4
+  timer: 3.5
   timeBetweenMoreProj: 0
   shooterCounterProjectiles: 3
 --- !u!114 &8616479955595290161
@@ -364,14 +364,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 4
-  points: 70
+  points: 120
   upgradeDefender: {fileID: 8616479955595290161, guid: 05bc1788201b00b48a169085f42ddc27,
     type: 3}
   textUpgrade: {fileID: 3476696088411191793, guid: 6ff497fa7ac3efc418381a33f8173517,
     type: 3}
   textSell: {fileID: 3476696088411191793, guid: 6ff497fa7ac3efc418381a33f8173517,
     type: 3}
-  sellPoints: 100
+  sellPoints: 75
   R: 0
   G: 0
   B: 200
