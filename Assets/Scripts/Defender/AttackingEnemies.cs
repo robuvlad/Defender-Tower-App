@@ -51,11 +51,17 @@ public class AttackingEnemies : MonoBehaviour
                             Enemy en = enemies[i].GetComponent<Enemy>() as Enemy;
                             if (en.GetHealth() >= 0.0f)
                             {
-                                Collider2D enemyCollider = enemies[i].GetComponent<Collider2D>() as Collider2D;
-                                RotateTowards(enemyCollider, this.gameObject);
-                                Shoot(enemies[i]);
-                                isInRange = true;
-                                break;
+                                GhostEnemy ghost = null;
+                                if (en is GhostEnemy)
+                                    ghost = en as GhostEnemy;
+                                if (!(en is GhostEnemy) || (ghost != null && ghost.IsGhost() == false))
+                                {
+                                    Collider2D enemyCollider = enemies[i].GetComponent<Collider2D>() as Collider2D;
+                                    RotateTowards(enemyCollider, this.gameObject);
+                                    Shoot(enemies[i]);
+                                    isInRange = true;
+                                    break;
+                                }
                             }
                         }
                     }

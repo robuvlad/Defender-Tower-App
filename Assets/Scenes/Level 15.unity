@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa9f119ed14b41945b478f6f6917aab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalPoints: 60
+  totalPoints: 400
   pointsText: {fileID: 329055309}
 --- !u!4 &63708113
 Transform:
@@ -282,8 +282,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de7f6232dea9c254eb9f1923cb49845a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 8233662287784016791, guid: 1fc21738940c8e341b746f295c8e5adf, type: 3}
-  numberOfEnemies: 40
+  enemy: {fileID: 1196230743934498411, guid: a7948ea66307fc44cb0e608a2ecc17ac, type: 3}
+  numberOfEnemies: 2
   timeBetweenEnemies: 2
 --- !u!1 &111242331
 GameObject:
