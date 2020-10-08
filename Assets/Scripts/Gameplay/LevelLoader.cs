@@ -34,6 +34,7 @@ public class LevelLoader : MonoBehaviour
         PlayerPrefsController.SetBoughDefenderPrefs(0, 1);
         PlayerPrefsController.SetBoughDefenderPrefs(3, 1);
         PlayerPrefsController.SetBoughDefenderPrefs(4, 1);
+        PlayerPrefsController.SetBoughDefenderPrefs(5, 1);
         //PlayerPrefsController.SetBoughDefenderPrefs(1, 1);
         /*
         PlayerPrefsController.SetSoundsPrefs(0.5f);
