@@ -503,7 +503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa9f119ed14b41945b478f6f6917aab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalPoints: 2700
+  totalPoints: 120
   pointsText: {fileID: 329055309}
 --- !u!4 &63708113
 Transform:
@@ -1234,7 +1234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a02b82d56671f49acd18dee44774ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreLevel: 1200
+  scoreLevel: 1500
 --- !u!4 &279702006
 Transform:
   m_ObjectHideFlags: 0
@@ -1420,6 +1420,7 @@ Transform:
   - {fileID: 1117805982}
   - {fileID: 670909909}
   - {fileID: 515840017}
+  - {fileID: 1099329863}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2048,6 +2049,7 @@ MonoBehaviour:
   - {fileID: 1117805983}
   - {fileID: 670909910}
   - {fileID: 515840018}
+  - {fileID: 1099329864}
   timeBetweenWaves: 2
   waveText: {fileID: 2094124149}
 --- !u!4 &487200679
@@ -2327,9 +2329,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de7f6232dea9c254eb9f1923cb49845a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 6332252460759007965, guid: cfea34b459d918c45bb606aeecfbebc9, type: 3}
-  numberOfEnemies: 13
-  timeBetweenEnemies: 6
+  enemy: {fileID: 1393229748301330701, guid: 95363894b53930f4dad6e8cf61cdabfb, type: 3}
+  numberOfEnemies: 40
+  timeBetweenEnemies: 2
 --- !u!1 &535208744
 GameObject:
   m_ObjectHideFlags: 0
@@ -5974,6 +5976,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1092787420}
   m_CullTransparentMesh: 0
+--- !u!1 &1099329862
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1099329863}
+  - component: {fileID: 1099329864}
+  m_Layer: 0
+  m_Name: Wave 17
+  m_TagString: wave
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1099329863
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099329862}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 295948144}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1099329864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099329862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de7f6232dea9c254eb9f1923cb49845a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 6332252460759007965, guid: cfea34b459d918c45bb606aeecfbebc9, type: 3}
+  numberOfEnemies: 30
+  timeBetweenEnemies: 4
 --- !u!1 &1117805981
 GameObject:
   m_ObjectHideFlags: 0
