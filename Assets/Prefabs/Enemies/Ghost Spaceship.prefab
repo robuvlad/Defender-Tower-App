@@ -135,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 50000
   speed: 0.35
-  points: 15
+  points: 20
   normalTime: 7
   ghostTime: 2.5
   isGhost: 0

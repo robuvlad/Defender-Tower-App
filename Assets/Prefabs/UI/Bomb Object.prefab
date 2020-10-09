@@ -217,8 +217,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flames: []
-  timeToFlame: 4
-  timeUntilFlame: 10
+  timeToFlame: 5
+  timeUntilFlame: 30
   points: 100
   panel: {fileID: 0}
   locker: {fileID: 6097821288825680336}
