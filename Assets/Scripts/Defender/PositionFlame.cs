@@ -6,11 +6,18 @@ public class PositionFlame : MonoBehaviour
 {
     [SerializeField] Flame[] flames = null;
     [SerializeField] float timeToFlame = 0.0f;
+    [SerializeField] float timeUntilFlame = 0.0f;
     [SerializeField] int points = 0;
 
     [Header("UI config")]
     [SerializeField] GameObject panel = null;
     [SerializeField] GameObject locker = null;
+
+    [Header("Timer")]
+    [SerializeField] GameObject timer = null;
+
+    private bool timerWasPressed = false;
+    private float timerDeltaTime = 0.0f;
 
     void Start()
     {
@@ -20,6 +27,11 @@ public class PositionFlame : MonoBehaviour
         {
             locker.SetActive(true);
         }
+    }
+
+    void Update()
+    {
+        HandleTimerFading();
     }
 
     private bool CheckDefenderAvailability()
@@ -35,9 +47,10 @@ public class PositionFlame : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (CheckDefenderAvailability() == true)
+        if (CheckDefenderAvailability() == true && timerWasPressed == false)
         {
             HandleFlame();
+            timerWasPressed = true;
         }
     }
 
@@ -65,5 +78,34 @@ public class PositionFlame : MonoBehaviour
         {
             flame.gameObject.SetActive(boolean);
         }
+    }
+
+    private void HandleTimerFading()
+    {
+        timer.transform.localScale = new Vector2(1.0f, NormalizedTimerFading());
+        if (timerWasPressed == true && timer != null)
+        {
+            timerDeltaTime += Time.deltaTime;
+            float scale = NormalizedTimerFading();
+            timer.transform.localScale = new Vector2(1.0f, scale);
+            if (timerDeltaTime >= timeUntilFlame)
+            {
+                timerWasPressed = false;
+                timerDeltaTime = 0.0f;
+            }
+        }
+    }
+
+    private float NormalizedTimerFading()
+    {
+        if (timerWasPressed == false)
+            return 0.0f;
+        float diff = timeUntilFlame - timerDeltaTime;
+        float result = diff / timeUntilFlame;
+        if (result < 0.0f)
+            result = 0.0f;
+        if (result > 1.0f)
+            result = 1.0f;
+        return result;
     }
 }

@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa9f119ed14b41945b478f6f6917aab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalPoints: 400
+  totalPoints: 2180
   pointsText: {fileID: 329055309}
 --- !u!4 &63708113
 Transform:
@@ -282,9 +282,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de7f6232dea9c254eb9f1923cb49845a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 1196230743934498411, guid: a7948ea66307fc44cb0e608a2ecc17ac, type: 3}
-  numberOfEnemies: 2
-  timeBetweenEnemies: 2
+  enemy: {fileID: 9154522848909194461, guid: e1f5835e5a994ca4da67f647c5eb511b, type: 3}
+  numberOfEnemies: 30
+  timeBetweenEnemies: 2.5
 --- !u!1 &104140485
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,9 +332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f711e89052a0b304a8b69597bcf41d8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 50
-  timer: 1
-  numberOfTimes: 4
+  power: 2500
 --- !u!95 &104140488
 Animator:
   serializedVersion: 3
@@ -5084,9 +5082,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de7f6232dea9c254eb9f1923cb49845a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 7919329691033573082, guid: 04b2be4b48a1e0e46b91234187de1da9, type: 3}
-  numberOfEnemies: 30
-  timeBetweenEnemies: 5
+  enemy: {fileID: 3907456287926716367, guid: 3c2a03df2a2a33d4fa1005ccd80eaa6b, type: 3}
+  numberOfEnemies: 40
+  timeBetweenEnemies: 3
 --- !u!4 &318528249
 Transform:
   m_ObjectHideFlags: 0
@@ -5474,9 +5472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f711e89052a0b304a8b69597bcf41d8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 50
-  timer: 1
-  numberOfTimes: 4
+  power: 2500
 --- !u!95 &392006018
 Animator:
   serializedVersion: 3
@@ -5626,9 +5622,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de7f6232dea9c254eb9f1923cb49845a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 1393229748301330701, guid: 95363894b53930f4dad6e8cf61cdabfb, type: 3}
-  numberOfEnemies: 50
-  timeBetweenEnemies: 2.5
+  enemy: {fileID: 1196230743934498411, guid: a7948ea66307fc44cb0e608a2ecc17ac, type: 3}
+  numberOfEnemies: 5
+  timeBetweenEnemies: 10
 --- !u!1 &464429207
 GameObject:
   m_ObjectHideFlags: 0
@@ -5895,7 +5891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - {fileID: 93194469}
+  - {fileID: 404162918}
   - {fileID: 931273558}
   - {fileID: 706411151}
   - {fileID: 737545488}
@@ -7408,8 +7404,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 3907456287926716367, guid: 3c2a03df2a2a33d4fa1005ccd80eaa6b, type: 3}
-  numberOfEnemies: 30
-  timeBetweenEnemies: 2.5
+  numberOfEnemies: 50
+  timeBetweenEnemies: 3
 --- !u!1 &737545486
 GameObject:
   m_ObjectHideFlags: 0
@@ -7453,9 +7449,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de7f6232dea9c254eb9f1923cb49845a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 3907456287926716367, guid: 3c2a03df2a2a33d4fa1005ccd80eaa6b, type: 3}
-  numberOfEnemies: 30
-  timeBetweenEnemies: 2.5
+  enemy: {fileID: 9154522848909194461, guid: e1f5835e5a994ca4da67f647c5eb511b, type: 3}
+  numberOfEnemies: 60
+  timeBetweenEnemies: 1
 --- !u!1 &752749529
 GameObject:
   m_ObjectHideFlags: 0
@@ -7856,9 +7852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f711e89052a0b304a8b69597bcf41d8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 50
-  timer: 1
-  numberOfTimes: 4
+  power: 2500
 --- !u!95 &860874895
 Animator:
   serializedVersion: 3
@@ -8134,8 +8128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de7f6232dea9c254eb9f1923cb49845a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 9154522848909194461, guid: e1f5835e5a994ca4da67f647c5eb511b, type: 3}
-  numberOfEnemies: 35
+  enemy: {fileID: 3907456287926716367, guid: 3c2a03df2a2a33d4fa1005ccd80eaa6b, type: 3}
+  numberOfEnemies: 40
   timeBetweenEnemies: 2.5
 --- !u!4 &931273559
 Transform:
@@ -8626,9 +8620,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de7f6232dea9c254eb9f1923cb49845a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 3907456287926716367, guid: 3c2a03df2a2a33d4fa1005ccd80eaa6b, type: 3}
+  enemy: {fileID: 1393229748301330701, guid: 95363894b53930f4dad6e8cf61cdabfb, type: 3}
   numberOfEnemies: 40
-  timeBetweenEnemies: 2.5
+  timeBetweenEnemies: 4
 --- !u!1 &1175383203
 GameObject:
   m_ObjectHideFlags: 0
@@ -8672,9 +8666,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de7f6232dea9c254eb9f1923cb49845a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 1393229748301330701, guid: 95363894b53930f4dad6e8cf61cdabfb, type: 3}
-  numberOfEnemies: 40
-  timeBetweenEnemies: 2.5
+  enemy: {fileID: 7919329691033573082, guid: 04b2be4b48a1e0e46b91234187de1da9, type: 3}
+  numberOfEnemies: 50
+  timeBetweenEnemies: 1
 --- !u!1 &1188216793 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1715191550973277900, guid: e70225cba148e9b42b197a9940519e36,
@@ -8862,9 +8856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f711e89052a0b304a8b69597bcf41d8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 50
-  timer: 1
-  numberOfTimes: 4
+  power: 2500
 --- !u!95 &1224517612
 Animator:
   serializedVersion: 3
@@ -11084,9 +11076,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f711e89052a0b304a8b69597bcf41d8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 50
-  timer: 1
-  numberOfTimes: 4
+  power: 2500
 --- !u!95 &1602146493
 Animator:
   serializedVersion: 3
@@ -12489,9 +12479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f711e89052a0b304a8b69597bcf41d8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 50
-  timer: 1
-  numberOfTimes: 4
+  power: 2500
 --- !u!95 &1856261457
 Animator:
   serializedVersion: 3
@@ -12858,9 +12846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f711e89052a0b304a8b69597bcf41d8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 50
-  timer: 1
-  numberOfTimes: 4
+  power: 2500
 --- !u!58 &1940190288
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -13330,9 +13316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f711e89052a0b304a8b69597bcf41d8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 50
-  timer: 1
-  numberOfTimes: 4
+  power: 2500
 --- !u!95 &1981699560
 Animator:
   serializedVersion: 3
@@ -14518,9 +14502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f711e89052a0b304a8b69597bcf41d8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 50
-  timer: 1
-  numberOfTimes: 4
+  power: 2500
 --- !u!95 &2052549007
 Animator:
   serializedVersion: 3
@@ -14657,7 +14639,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1393229748301330701, guid: 95363894b53930f4dad6e8cf61cdabfb, type: 3}
-  numberOfEnemies: 30
+  numberOfEnemies: 40
   timeBetweenEnemies: 2.5
 --- !u!4 &2054066079
 Transform:

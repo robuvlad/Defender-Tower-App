@@ -133,11 +133,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e477e0002330f614692cf1a10066f8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 250
-  speed: 2
+  health: 50000
+  speed: 0.35
   points: 15
-  normalTime: 3
-  ghostTime: 1
+  normalTime: 7
+  ghostTime: 2.5
   isGhost: 0
 --- !u!114 &8274220912892656148
 MonoBehaviour:
