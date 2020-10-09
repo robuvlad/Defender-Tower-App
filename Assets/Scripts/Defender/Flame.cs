@@ -5,20 +5,20 @@ using UnityEngine;
 public class Flame : MonoBehaviour
 {
     [SerializeField] float power = 0.0f;
-    [SerializeField] float timer = 0.0f;
-    [SerializeField] int numberOfTimes = 0;
+    //[SerializeField] float timer = 0.0f;
+    //[SerializeField] int numberOfTimes = 0;
 
     void Start()
     {
         gameObject.SetActive(false);
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    public float GetPower()
     {
-        var enemy = other.GetComponent<Enemy>();
-        StartCoroutine(AttackEnemy(enemy));
+        return power;
     }
 
+    /*
     private IEnumerator AttackEnemy(Enemy enemy)
     {
         for(int i=0; i<numberOfTimes; i++)
@@ -33,5 +33,5 @@ public class Flame : MonoBehaviour
         float actualHealth = enemy.GetHealth();
         actualHealth -= power;
         enemy.SetHealth(actualHealth);
-    }
+    }*/
 }

@@ -17,6 +17,7 @@ public class EnemyAttacked : MonoBehaviour
     private bool isAlreadyDead = false;
 
     private const string TAG_PROJECTILE = "projectile";
+    private const string TAG_FLAME = "flame";
     private const string IS_DYING_ANIMATOR_PARAM = "isDying";
 
     void Start()
@@ -29,20 +30,29 @@ public class EnemyAttacked : MonoBehaviour
     {
         if (other.gameObject.tag == TAG_PROJECTILE)
         {
-            float newHealth = enemy.GetHealth() - other.GetComponent<Projectile>().GetProjectileDamage();
-            enemy.SetHealth(newHealth);
-            if (enemy.GetHealth() <= 0.0f && !isAlreadyDead)
-            {
-                isAlreadyDead = true;
-                var animator = GetComponent<Animator>();
-                animator.SetBool(IS_DYING_ANIMATOR_PARAM, true);
-                points.IncreasePoints(enemy.GetPoints());
-                ShowPoints();
-                var collider = GetComponent<PolygonCollider2D>();
-                Destroy(collider);
-                Destroy(this.gameObject, timeToDie);
-            }
+            HandleProjectile(other);
             Destroy(other.gameObject);
+        }
+        else if (other.gameObject.tag == TAG_FLAME)
+        {
+            HandleFlame(other);
+        }
+    }
+
+    private void HandleProjectile(Collider2D other)
+    {
+        float newHealth = enemy.GetHealth() - other.GetComponent<Projectile>().GetProjectileDamage();
+        enemy.SetHealth(newHealth);
+        if (enemy.GetHealth() <= 0.0f && !isAlreadyDead)
+        {
+            isAlreadyDead = true;
+            var animator = GetComponent<Animator>();
+            animator.SetBool(IS_DYING_ANIMATOR_PARAM, true);
+            points.IncreasePoints(enemy.GetPoints());
+            ShowPoints();
+            var collider = GetComponent<PolygonCollider2D>();
+            Destroy(collider);
+            Destroy(this.gameObject, timeToDie);
         }
     }
 
@@ -50,5 +60,29 @@ public class EnemyAttacked : MonoBehaviour
     {
         var pointsT = Instantiate(pointsText, gameObject.transform.position, Quaternion.identity);
         Destroy(pointsT, pointsTime);
+    }
+
+    private void HandleFlame(Collider2D other)
+    {
+        var flame = other.GetComponent<Flame>();
+        var power = flame.GetPower();
+        DecreaseHealth(power);
+        if (enemy.GetHealth() <= 0.0f && !isAlreadyDead)
+        {
+            isAlreadyDead = true;
+            var animator = GetComponent<Animator>();
+            animator.SetBool(IS_DYING_ANIMATOR_PARAM, true);
+            points.IncreasePoints(enemy.GetPoints());
+            ShowPoints();
+            var collider = GetComponent<CircleCollider2D>();
+            Destroy(collider);
+            Destroy(this.gameObject, timeToDie);
+        }
+    }
+
+    private void DecreaseHealth(float power)
+    {
+        float newHealth = enemy.GetHealth() - power;
+        enemy.SetHealth(newHealth);
     }
 }
