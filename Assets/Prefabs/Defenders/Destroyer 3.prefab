@@ -368,7 +368,7 @@ MonoBehaviour:
   upgradeDefender: {fileID: 0}
   textUpgrade: {fileID: 0}
   textSell: {fileID: 0}
-  sellPoints: 100
+  sellPoints: 120
   R: 50
   G: 50
   B: 50

@@ -9,6 +9,14 @@ public class StoreButton : MonoBehaviour
     [SerializeField] GameObject soldText = null;
     [SerializeField] GameObject buyButton = null;
 
+    [Header("UI Components")]
+    [SerializeField] Text[] buyTexts = null;
+    [SerializeField] Text[] sellTexts = null;
+    [SerializeField] Text[] timerTexts = null;
+    [SerializeField] Text[] radiusTexts = null;
+    [SerializeField] Text[] damageTexts = null;
+    [SerializeField] Text nameTexts = null;
+
     private static StoreButton selectedStoreBtn = null;
 
     void Start()
@@ -21,7 +29,7 @@ public class StoreButton : MonoBehaviour
     private void OnPress()
     {
         EnableImage();
-        ShowPrice();
+        ShowInfo();
         EnableBuyButton();
     }
 
@@ -37,10 +45,30 @@ public class StoreButton : MonoBehaviour
         image.color = new Color32(255, 255, 255, 255);
     }
 
+    private void ShowInfo()
+    {
+        ShowPrice();
+        var scoreText = gameObject.transform.GetChild(0).GetComponent<ScoreText>();
+        SetGenericText<int>(buyTexts, scoreText.GetBuy());
+        SetGenericText<int>(sellTexts, scoreText.GetSell());
+        SetGenericText<float>(timerTexts, scoreText.GetTimer());
+        SetGenericText<float>(radiusTexts, scoreText.GetRadius());
+        SetGenericText<float>(damageTexts, scoreText.GetDamage());
+        nameTexts.text = scoreText.GetName();
+    }
+
     private void ShowPrice()
     {
         var scoreText = gameObject.transform.GetChild(0).GetComponent<ScoreText>();
         priceText.text = scoreText.GetScore().ToString();
+    }
+
+    private void SetGenericText<T>(Text[] texts, T[] objs)
+    {
+        for(int i = 0; i < 3; i++)
+        {
+            texts[i].text = objs[i].ToString();
+        }
     }
 
     private void EnableBuyButton()

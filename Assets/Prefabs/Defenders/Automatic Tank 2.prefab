@@ -371,7 +371,7 @@ MonoBehaviour:
     type: 3}
   textSell: {fileID: 3476696088411191793, guid: 6ff497fa7ac3efc418381a33f8173517,
     type: 3}
-  sellPoints: 45
+  sellPoints: 50
   R: 0
   G: 200
   B: 0

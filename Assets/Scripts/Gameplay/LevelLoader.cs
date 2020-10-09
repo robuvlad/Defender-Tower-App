@@ -31,24 +31,17 @@ public class LevelLoader : MonoBehaviour
         sceneIndex += 1;
         SceneManager.LoadScene(sceneIndex);
 
-        PlayerPrefsController.SetBoughDefenderPrefs(0, 1);
-        PlayerPrefsController.SetBoughDefenderPrefs(3, 1);
-        PlayerPrefsController.SetBoughDefenderPrefs(4, 1);
-        PlayerPrefsController.SetBoughDefenderPrefs(5, 1);
-        //PlayerPrefsController.SetBoughDefenderPrefs(1, 1);
         /*
+        PlayerPrefsController.SetBoughDefenderPrefs(0, 1);
         PlayerPrefsController.SetSoundsPrefs(0.5f);
         PlayerPrefsController.SetVolumePrefs(0.4f);
         PlayerPrefsController.SetScorePrefs(0);
         PlayerPrefs.DeleteKey("Bought_Defender");
-           for(int i=1; i < 6; i++)
-               PlayerPrefs.DeleteKey("Bought_Defender" + i.ToString());
         PlayerPrefs.DeleteKey("Level");
-        PlayerPrefs.DeleteKey("Star1");
-        PlayerPrefs.DeleteKey("Star2");
-        PlayerPrefs.DeleteKey("Star3");
-        PlayerPrefs.DeleteKey("Star4");
-        PlayerPrefs.DeleteKey("Star5");
+        for (int i=1; i < 6; i++)
+            PlayerPrefs.DeleteKey("Bought_Defender" + i.ToString());
+        for (int i = 1; i <= 15; i++)
+            PlayerPrefs.DeleteKey("Star" + i.ToString());
         */
     }
 
