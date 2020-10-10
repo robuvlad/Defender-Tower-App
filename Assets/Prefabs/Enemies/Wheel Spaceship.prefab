@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDie: 1
-  pointsText: {fileID: 3476696088411191793, guid: 8b6cec3414cfd2d4bbd69ff19de733e0,
+  pointsText: {fileID: 3476696088411191793, guid: dadf1f0f3e5e30b4c840c77eff2e635d,
     type: 3}
   pointsTime: 1
 --- !u!1001 &7417250945478238911
