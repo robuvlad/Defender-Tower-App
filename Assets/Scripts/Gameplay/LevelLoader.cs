@@ -31,6 +31,8 @@ public class LevelLoader : MonoBehaviour
         sceneIndex += 1;
         SceneManager.LoadScene(sceneIndex);
 
+        for(int i=0; i<6;i++)
+            PlayerPrefsController.SetBoughDefenderPrefs(i, 1);
         /*
         PlayerPrefsController.SetBoughDefenderPrefs(0, 1);
         PlayerPrefsController.SetSoundsPrefs(0.5f);

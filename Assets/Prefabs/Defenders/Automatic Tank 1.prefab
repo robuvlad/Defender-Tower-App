@@ -367,9 +367,9 @@ MonoBehaviour:
   points: 70
   upgradeDefender: {fileID: 8616479955595290161, guid: b6dc2bc260c9cd34ea23cb6c48b7d83d,
     type: 3}
-  textUpgrade: {fileID: 3476696088411191793, guid: 6ff497fa7ac3efc418381a33f8173517,
+  textUpgrade: {fileID: 3476696088411191793, guid: a96caa1aa52e2654eb242d92dede4b36,
     type: 3}
-  textSell: {fileID: 3476696088411191793, guid: 6ff497fa7ac3efc418381a33f8173517,
+  textSell: {fileID: 3476696088411191793, guid: 46e13db93c2445748bc21316cee6124e,
     type: 3}
   sellPoints: 45
   R: 0

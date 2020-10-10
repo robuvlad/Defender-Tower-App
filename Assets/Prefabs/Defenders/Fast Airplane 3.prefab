@@ -367,7 +367,8 @@ MonoBehaviour:
   points: 150
   upgradeDefender: {fileID: 0}
   textUpgrade: {fileID: 0}
-  textSell: {fileID: 0}
+  textSell: {fileID: 3476696088411191793, guid: 7e9adaead360b2a4395908f6797d075d,
+    type: 3}
   sellPoints: 90
   R: 0
   G: 0

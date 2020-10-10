@@ -349,6 +349,8 @@ MonoBehaviour:
   weapon: {fileID: 9115922705714663053, guid: 9a0c07bce436f9649b48d830bb903c59, type: 3}
   spawnProjectile: {fileID: 1874449555640258757}
   timer: 0.6
+  timeBetweenMoreProj: 0
+  shooterCounterProjectiles: 3
 --- !u!114 &8616479955595290161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,9 +367,9 @@ MonoBehaviour:
   points: 60
   upgradeDefender: {fileID: 8616479955595290161, guid: c68ac6bf155bbc74d9f5fb72c2fdac7d,
     type: 3}
-  textUpgrade: {fileID: 3476696088411191793, guid: 6ff497fa7ac3efc418381a33f8173517,
+  textUpgrade: {fileID: 3476696088411191793, guid: 4854373c6cdf57d409d170ab8be6b3db,
     type: 3}
-  textSell: {fileID: 3476696088411191793, guid: 6ff497fa7ac3efc418381a33f8173517,
+  textSell: {fileID: 3476696088411191793, guid: daf05cdf53b73bf45a51b4e05986180c,
     type: 3}
   sellPoints: 35
   R: 235

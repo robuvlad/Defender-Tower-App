@@ -89,11 +89,11 @@ public class DefenderTools : MonoBehaviour
         }
     }
 
-    public void SetDefender(GameObject def, Defender upgradeDef, GameObject textUpgrade, GameObject textSell)
+    public void SetDefender(GameObject def, Defender upgradeDef, GameObject textUpgrade, GameObject textSell, bool isSelected)
     {
         this.defender = def;
         this.upgradeDefender = upgradeDef;
-        ShowTexts(textUpgrade, textSell);
+        ShowTexts(textUpgrade, textSell, isSelected);
     }
 
     public void ShowColor()
@@ -116,7 +116,7 @@ public class DefenderTools : MonoBehaviour
         }
     }
 
-    private void ShowTexts(GameObject textUpgrade, GameObject textSell)
+    private void ShowTexts(GameObject textUpgrade, GameObject textSell, bool isSelected)
     {
         if (defender != null && textUpgrade != null && textSell != null)
         {
@@ -125,6 +125,14 @@ public class DefenderTools : MonoBehaviour
                 var textUpgradePref = Instantiate(textUpgrade, text.transform.position, Quaternion.identity);
                 textUpgradePref.transform.parent = text.transform;
             }
+            if (gameObject.tag == SELL_TAG)
+            {
+                var textSellPref = Instantiate(textSell, text.transform.position, Quaternion.identity);
+                textSellPref.transform.parent = text.transform;
+            }
+        }
+        else if (textUpgrade == null && textSell != null && isSelected == false)
+        {
             if (gameObject.tag == SELL_TAG)
             {
                 var textSellPref = Instantiate(textSell, text.transform.position, Quaternion.identity);

@@ -102,7 +102,7 @@ public class Defender : MonoBehaviour
                 tool.ShowColor();
             else
                 tool.HideColor();
-            tool.SetDefender(obj, upgradeDefender, textUpgrade, textSell);
+            tool.SetDefender(obj, upgradeDefender, textUpgrade, textSell, isSelected);
         }
     }
 

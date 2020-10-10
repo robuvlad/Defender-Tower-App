@@ -23,9 +23,11 @@ public class PositionFlame : MonoBehaviour
     {
         panel.SetActive(false);
         locker.SetActive(false);
+        gameObject.GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
         if (CheckDefenderAvailability() == false)
         {
             locker.SetActive(true);
+            gameObject.GetComponent<SpriteRenderer>().color = new Color32(50, 50, 50, 255);
         }
     }
 
