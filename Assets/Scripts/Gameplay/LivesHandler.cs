@@ -38,6 +38,11 @@ public class LivesHandler : MonoBehaviour
         }
     }
 
+    public void IncreaseLives(int noLives)
+    {
+        totalLives = Mathf.Min(10, totalLives + noLives);
+    }
+
     public int GetMaximumLives()
     {
         return maximumLives;

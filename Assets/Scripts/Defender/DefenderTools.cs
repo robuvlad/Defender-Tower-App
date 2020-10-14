@@ -93,6 +93,7 @@ public class DefenderTools : MonoBehaviour
     {
         this.defender = def;
         this.upgradeDefender = upgradeDef;
+        DestroyTexts();
         ShowTexts(textUpgrade, textSell, isSelected);
     }
 

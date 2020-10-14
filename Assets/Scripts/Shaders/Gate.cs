@@ -34,6 +34,14 @@ public class Gate : MonoBehaviour
         }
     }
 
+    public void Revive(int noLives)
+    {
+        var lives = FindObjectOfType<LivesHandler>();
+        lives.IncreaseLives(noLives);
+        gameOverPanel.SetActive(false);
+        Time.timeScale = 1;
+    }
+
     private void PlayAudio()
     {
         var audio = GetComponent<AudioSource>();
