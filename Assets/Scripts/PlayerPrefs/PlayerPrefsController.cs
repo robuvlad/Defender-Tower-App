@@ -28,7 +28,7 @@ public class PlayerPrefsController : MonoBehaviour
     private const string SCORE_KEY = "Score";
 
     // MAX LEVEL
-    private const int MAX_LEVEL = 5;
+    private const int MAX_LEVEL = 15;
 
     public static void SetVolumePrefs(float volume)
     {
