@@ -29,7 +29,7 @@ public class Gameplay : MonoBehaviour
     {
         if (isPaused)
         {
-            Time.timeScale = 1;
+            Time.timeScale = FindObjectOfType<GameSpeed>().GetCurrentTimeScale();
             SetPanelInactive();
             isPaused = false;
         }
