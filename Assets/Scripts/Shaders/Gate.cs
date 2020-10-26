@@ -39,7 +39,9 @@ public class Gate : MonoBehaviour
         var lives = FindObjectOfType<LivesHandler>();
         lives.IncreaseLives(noLives);
         gameOverPanel.SetActive(false);
-        Time.timeScale = 1;
+
+        GameSpeed gameSpeed = FindObjectOfType<GameSpeed>();
+        Time.timeScale = gameSpeed.GetCurrentTimeScale();
     }
 
     private void PlayAudio()

@@ -51,6 +51,7 @@ public class Gameplay : MonoBehaviour
     {
         int index = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(index + 1);
+        Time.timeScale = 1;
     }
 
     private void SetPanelInactive()

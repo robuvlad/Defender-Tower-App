@@ -99,6 +99,9 @@ public class NextLevel : MonoBehaviour
             return;
         indexLevel += 1;
         PlayerPrefsController.SetLevelPrefs(indexLevel);
+
+        // FACEBOOK EVENT
+        FacebookManager.Instance.LevelEnded(indexLevel);
     }
 
     private int GetCurrentLevel()
